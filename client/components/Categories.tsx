@@ -19,7 +19,7 @@ const categories = [
     description: "Rahu-Ketu temple tours",
     icon: "🕉️",
     image:
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=340&h=240&fit=crop",
+      "/srikalahasti.jpg",
   },
   {
     name: "Kanipakam",

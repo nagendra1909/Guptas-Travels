@@ -23,7 +23,7 @@ const destinations = [
     subtitle: "Rahu-Ketu Pooja Special",
     price: "₹2,800",
     image:
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=724&h=480&fit=crop",
+      "/srikalahasti.jpg",
     description: "Famous temple for Rahu-Ketu dosham removal, 36 km from Tirupati",
     duration: "Half Day",
   },
@@ -64,15 +64,15 @@ const destinations = [
     description: "Lord Venkateswara temple where He got ready for marriage, 12 km away",
     duration: "Half Day",
   },
-  {
-    title: "Horsley Hills",
-    subtitle: "Hill Station Retreat",
-    price: "₹4,500",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=724&h=480&fit=crop",
-    description: "Scenic hill station at 4,312 feet, 144 km from Tirupati",
-    duration: "1 Day",
-  },
+  // {
+  //   title: "Horsley Hills",
+  //   subtitle: "Hill Station Retreat",
+  //   price: "₹4,500",
+  //   image:
+  //     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=724&h=480&fit=crop",
+  //   description: "Scenic hill station at 4,312 feet, 144 km from Tirupati",
+  //   duration: "1 Day",
+  // },
   {
     title: "Sri Venkateswara Zoo",
     subtitle: "Wildlife & Nature Park",
