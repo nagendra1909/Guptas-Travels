@@ -25,77 +25,79 @@ export default function Hero() {
 
   return (
     <>
-    <section className="w-full px-4 sm:px-8 lg:px-24 pt-2 sm:pt-16 pb-12 sm:pb-20 relative overflow-hidden bg-gradient-to-br from-[#f0f9f6] via-white to-[#e8f5f0]">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16 relative z-10">
-        <div className="flex-1 max-w-3xl w-full">
+    <section className="w-full px-3 sm:px-8 lg:px-24 pt-4 sm:pt-16 pb-8 sm:pb-20 relative overflow-hidden bg-gradient-to-br from-[#f0f9f6] via-white to-[#e8f5f0]">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-12 lg:gap-16 relative z-10">
+        <div className="flex-1 max-w-3xl w-full px-1 sm:px-0 flex flex-col items-center lg:items-start">
           {/* Premium badge */}
           <div
-            className="relative inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[#34a870]/10 to-[#5dbd7f]/10 border border-[#34a870]/30 mb-4 sm:mb-6 shadow-sm hover:shadow-md transition-shadow smooth-transition"
+            className="relative inline-flex items-center gap-1 sm:gap-3 px-2 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#34a870]/10 to-[#5dbd7f]/10 border border-[#34a870]/30 mb-3 sm:mb-6 shadow-sm hover:shadow-md transition-shadow smooth-transition"
             role="status"
             aria-label="Excellence in motion"
             title="Excellence in Motion — Signature Travel Experience"
           >
-            <span className="relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#34a870] flex-shrink-0">
+            <span className="relative flex items-center justify-center w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#34a870] flex-shrink-0">
               <span className="absolute inline-flex h-full w-full rounded-full bg-[#34a870] opacity-30 animate-ping"></span>
-              <svg className="relative w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <svg className="relative w-2 h-2 sm:w-3 sm:h-3 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                 <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
 
             <div className="flex flex-col sm:flex-row sm:items-baseline gap-0">
-              <span className="text-[#34a870] font-['Lato'] font-semibold text-[10px] sm:text-sm tracking-wider">
-                EXCELLENCE IN MOTION
+              <span className="text-[#34a870] font-['Lato'] font-semibold text-[9px] sm:text-sm tracking-wider">
+                EXCELLENT TRAVEL PARTNER
               </span>
             </div>
           </div>
 
-          <h1 className="font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight text-[#1a4d32] mb-3 sm:mb-6">
+          <h1 className="font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight text-[#1a4d32] mb-3 sm:mb-6 text-center lg:text-left">
             <span className="block mb-1 sm:mb-2">Journey with</span>
-            <span className="text-gradient-green">GUPTAS AGENCY</span>
-            <span className="block text-[#34a870] text-lg sm:text-2xl lg:text-4xl font-light mt-2 sm:mt-3">Where Travel Dreams Come True</span>
+            <span className="text-gradient-green block py-2 sm:py-3">GUPTAS TRAVELS</span>
+            <span className="block text-[#34a870] text-sm sm:text-2xl lg:text-4xl font-light mt-2 sm:mt-3">Where Travel Dreams Come True</span>
           </h1>
           
-          <p className="text-[#4d4d4d] text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-6 sm:mb-10 font-['Lato'] max-w-3xl">
+          <p className="text-[#4d4d4d] text-xs sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-5 sm:mb-10 font-['Lato'] max-w-3xl text-center lg:text-left">
             Trusted by thousands, refined by years. Experience premium transportation reimagined. Our meticulously-maintained fleet, elite drivers, and unwavering commitment to excellence ensure every journey transcends expectation.
           </p>
 
-          {/* Stats - Mobile Responsive Grid */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-10 mb-8 sm:mb-12">
-            <div className="flex-1 text-center sm:text-left">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#34a870] font-['Playfair_Display'] mb-1">
+          {/* Stats - Single line on mobile, centered */}
+          <div className="flex justify-center lg:justify-start items-center gap-2 sm:gap-4 lg:gap-8 mb-6 sm:mb-12 w-full overflow-x-auto">
+            <div className="flex items-baseline gap-1 flex-shrink-0">
+              <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#34a870] font-['Playfair_Display']">
                 10,000+
               </div>
-              <div className="text-xs sm:text-sm lg:text-base text-[#4d4d4d] font-['Lato'] font-medium">
-                Blissful Journeys
+              <div className="text-xs sm:text-sm text-[#4d4d4d] font-['Lato'] font-medium whitespace-nowrap">
+                Journeys
               </div>
             </div>
-            <div className="flex-1 text-center sm:text-left">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#34a870] font-['Playfair_Display'] mb-1">
+            <div className="w-px h-5 sm:h-8 bg-[#34a870]/20 flex-shrink-0"></div>
+            <div className="flex items-baseline gap-1 flex-shrink-0">
+              <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#34a870] font-['Playfair_Display']">
                 15+
               </div>
-              <div className="text-xs sm:text-sm lg:text-base text-[#4d4d4d] font-['Lato'] font-medium">
-                Years Building Trust
+              <div className="text-xs sm:text-sm text-[#4d4d4d] font-['Lato'] font-medium whitespace-nowrap">
+                Years Trust
               </div>
             </div>
-            <div className="flex-1 text-center sm:text-left">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#34a870] font-['Playfair_Display'] mb-1">
+            <div className="w-px h-5 sm:h-8 bg-[#34a870]/20 flex-shrink-0"></div>
+            <div className="flex items-baseline gap-1 flex-shrink-0">
+              <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#34a870] font-['Playfair_Display']">
                 50+
               </div>
-              <div className="text-xs sm:text-sm lg:text-base text-[#4d4d4d] font-['Lato'] font-medium">
-                Premium Vehicles
+              <div className="text-xs sm:text-sm text-[#4d4d4d] font-['Lato'] font-medium whitespace-nowrap">
+                Vehicles
               </div>
             </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-            <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white font-['Lato'] font-bold text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
+            <button className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white font-['Lato'] font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto">
               <span>Book Your Ride Now</span>
-              <span className="text-xl">→</span>
+              <span className="text-lg sm:text-xl">→</span>
             </button>
             <button 
               onClick={handlePhoneClick}
-              className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-base sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <span>📞</span>
               <span className="hidden sm:inline">Call: +91 98765 43210</span>
