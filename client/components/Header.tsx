@@ -73,13 +73,12 @@ export default function Header() {
           </div>
           <button 
             onClick={() => scrollToSection('home')}
-            className="hidden sm:block"
           >
             <div>
-              <h1 className="text-[#1a4d32] font-['Playfair_Display'] text-lg sm:text-2xl font-bold leading-tight hover:text-[#34a870] smooth-transition cursor-pointer">
+              <h1 className="text-[#1a4d32] font-['Playfair_Display'] text-sm sm:text-lg lg:text-2xl font-bold leading-tight hover:text-[#34a870] smooth-transition cursor-pointer">
                 GUPTAS AGENCY
               </h1>
-              <span className="text-[#34a870] text-[10px] sm:text-xs font-['Lato'] tracking-widest font-medium">
+              <span className="text-[#34a870] text-[8px] sm:text-[10px] lg:text-xs font-['Lato'] tracking-widest font-medium">
                 PREMIUM TRAVELS
               </span>
             </div>
