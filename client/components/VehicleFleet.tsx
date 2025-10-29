@@ -69,6 +69,20 @@ const vehicles = [
     badge: "Best for Groups",
     icon: "🚌",
   },
+  {
+    name: "Tempo Traveller",
+    subtitle: "21 Seater",
+    capacity: "21 Seater",
+    localRent: "₹3,500",
+    localDiesel: "100/- per 6kms",
+    outstationRate: "₹25/km",
+    minKms: "300 kms",
+    features: ["AC", "Pushback Seats", "Entertainment", "Group Travel"],
+    image:
+      "https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-3350WB-mob.png",
+    badge: "Group Travel",
+    icon: "🚌",
+  },
 ];
 
 export default function VehicleFleet() {
