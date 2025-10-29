@@ -113,10 +113,10 @@ export default function Categories() {
         >
           <CarouselContent className="-ml-2 sm:-ml-4">
             {categories.map((category, index) => (
-              <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[48%] sm:basis-[60%] md:basis-1/2 lg:basis-1/4">
+              <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[100%] sm:basis-[60%] md:basis-1/2 lg:basis-1/4">
                 <div className="group cursor-pointer h-full">
                   {/* Premium Card Container */}
-                  <div className="relative w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-[#e0e0e0] hover:border-[#34a870] bg-gradient-to-br from-white to-[#f9f9f9]">
+                  <div className="relative w-full aspect-video sm:aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-[#e0e0e0] hover:border-[#34a870] bg-gradient-to-br from-white to-[#f9f9f9]">
                     {/* Background Image with Premium Effects */}
                     <img
                       src={category.image}
@@ -128,15 +128,15 @@ export default function Categories() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-[#34a870]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Category Name - On Image */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-2 sm:px-4 text-center">
-                      <h3 className="text-white font-['Playfair_Display'] text-xl sm:text-2xl font-bold leading-tight drop-shadow-lg">
+                    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-2 sm:px-4 text-center">
+                      <h3 className="text-white font-['Playfair_Display'] text-lg sm:text-xl lg:text-2xl font-bold leading-tight drop-shadow-lg">
                         {category.name}
                       </h3>
                     </div>
                     
                     {/* Description - Bottom Area */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent pt-8 pb-4 px-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <p className="text-white text-sm sm:text-base font-['Lato'] font-medium text-center drop-shadow-lg">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent pt-6 sm:pt-8 pb-3 sm:pb-4 px-3 sm:px-4 transform translate-y-0 sm:translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                      <p className="text-white text-xs sm:text-base font-['Lato'] font-medium text-center drop-shadow-lg line-clamp-2">
                         {category.description}
                       </p>
                     </div>
