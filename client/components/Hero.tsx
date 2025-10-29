@@ -24,16 +24,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-8 lg:px-24 pt-8 sm:pt-16 pb-12 sm:pb-20 relative overflow-hidden bg-gradient-to-br from-[#f0f9f6] via-white to-[#e8f5f0]">
-      {/* Decorative mandala pattern background */}
-      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 opacity-3">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="80" fill="none" stroke="#34a870" strokeWidth="2"/>
-          <circle cx="100" cy="100" r="60" fill="none" stroke="#5dbd7f" strokeWidth="2"/>
-          <circle cx="100" cy="100" r="40" fill="none" stroke="#b8e6d5" strokeWidth="2"/>
-        </svg>
-      </div>
-
+    <>
+    <section className="w-full px-4 sm:px-8 lg:px-24 pt-2 sm:pt-16 pb-12 sm:pb-20 relative overflow-hidden bg-gradient-to-br from-[#f0f9f6] via-white to-[#e8f5f0]">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16 relative z-10">
         <div className="flex-1 max-w-3xl w-full">
           {/* Premium badge */}
@@ -95,93 +87,34 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Key Features */}
-          <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-xl border-2 border-[#34a870]/20">
-            <h3 className="text-[#1a4d32] font-['Playfair_Display'] text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="text-2xl sm:text-3xl">✨</span>
-              Why Choose GUPTAS AGENCY?
-            </h3>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">🚗</span>
-                </div>
-                <div>
-                  <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
-                    Premium Fleet
-                  </h4>
-                  <p className="text-sm text-[#4d4d4d] font-['Lato']">
-                    Well-maintained AC vehicles with experienced drivers
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">🙏</span>
-                </div>
-                <div>
-                  <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
-                    Professional Service
-                  </h4>
-                  <p className="text-sm text-[#4d4d4d] font-['Lato']">
-                    Courteous drivers with local knowledge and expertise
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">💰</span>
-                </div>
-                <div>
-                  <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
-                    Best Prices
-                  </h4>
-                  <p className="text-sm text-[#4d4d4d] font-['Lato']">
-                    Transparent pricing with no hidden charges
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">⏰</span>
-                </div>
-                <div>
-                  <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
-                    24/7 Support
-                  </h4>
-                  <p className="text-sm text-[#4d4d4d] font-['Lato']">
-                    Round-the-clock assistance for your journey
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white font-['Lato'] font-bold text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto">
-                <span>Book Your Ride Now</span>
-                <span className="text-xl">→</span>
-              </button>
-              <button 
-                onClick={handlePhoneClick}
-                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-base sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
-              >
-                <span>📞</span>
-                <span className="hidden sm:inline">Call: +91 98765 43210</span>
-                <span className="sm:hidden">+91 98765 43210</span>
-              </button>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white font-['Lato'] font-bold text-base sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto">
+              <span>Book Your Ride Now</span>
+              <span className="text-xl">→</span>
+            </button>
+            <button 
+              onClick={handlePhoneClick}
+              className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-base sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
+            >
+              <span>📞</span>
+              <span className="hidden sm:inline">Call: +91 98765 43210</span>
+              <span className="sm:hidden">+91 98765 43210</span>
+            </button>
           </div>
         </div>
 
-        {/* Hero image section */}
-        <div className="flex-1 relative w-full max-w-lg lg:block hidden">
+        {/* Hero image section - Below text on mobile, right side on desktop, moved up */}
+        <div className="flex-1 relative w-full max-w-lg lg:block order-last lg:order-none -mt-4 sm:-mt-6 lg:-mt-16 xl:-mt-20">
           <div className="relative">
-            {/* Decorative green circle */}
-            <div className="absolute -top-4 -right-4 w-full h-full rounded-[3rem] bg-gradient-to-br from-[#34a870] to-[#5dbd7f] opacity-15 blur-2xl"></div>
+            {/* Decorative green circle - ONLY on image section */}
+            <div className="absolute top-0 -right-12 sm:-right-8 lg:-right-4 w-80 h-80 sm:w-96 sm:h-96 opacity-5 lg:opacity-10 pointer-events-none">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="60" fill="none" stroke="#34a870" strokeWidth="2"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="#5dbd7f" strokeWidth="1"/>
+                <circle cx="100" cy="100" r="20" fill="none" stroke="#b8e6d5" strokeWidth="2"/>
+              </svg>
+            </div>
             
             {/* Main image */}
             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
@@ -191,16 +124,16 @@ export default function Hero() {
                 width={600}
                 height={700}
                 loading="eager"
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
               />
               
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-              {/* Floating card */}
-              <div className="absolute bottom-2 left-5 right-5 bg-white/95 backdrop-blur-sm rounded-2xl px-3 shadow-xl border-l-4 border-[hsl(var(--sacred-saffron))]">
-                <div className="flex items-start gap-8">
-                  <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+              {/* Floating card - Hidden on mobile, visible on desktop */}
+              <div className="hidden sm:block absolute bottom-3 sm:bottom-4 left-3 sm:left-5 right-3 sm:right-5 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-2xl px-2 sm:px-3 py-2 sm:pt-2 shadow-lg sm:shadow-xl border-l-4 border-[hsl(var(--sacred-saffron))]">
+                <div className="flex items-start gap-3 sm:gap-8">
+                  <div className="w-12 sm:w-16 h-12 sm:h-16 rounded-lg overflow-hidden flex-shrink-0">
                     <img
                       src="\tirmula3.jpg"
                       alt="Temple Icon"
@@ -210,24 +143,24 @@ export default function Hero() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-['Playfair_Display'] text-lg font-bold text-[hsl(var(--foreground))] mb-1">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-['Playfair_Display'] text-xs sm:text-lg font-bold text-[hsl(var(--foreground))] mb-0.5 sm:mb-1">
                       Sri Venkateswara Temple
                     </h3>
-                    <p className="text-sm text-[hsl(var(--muted-foreground))] font-['Lato'] mb-2">
+                    <p className="text-xs sm:text-sm text-[hsl(var(--muted-foreground))] font-['Lato'] mb-1 sm:mb-2">
                       Tirumala, Tirupati
                     </p>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-0.5 sm:gap-1">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <svg
                           key={star}
-                          className="w-4 h-4 fill-[hsl(var(--temple-gold))]"
+                          className="w-3 sm:w-4 h-3 sm:h-4 fill-[hsl(var(--temple-gold))]"
                           viewBox="0 0 20 20"
                         >
                           <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                         </svg>
                       ))}
-                      <span className="ml-2 text-sm font-semibold text-[hsl(var(--foreground))] font-['Lato']">
+                      <span className="ml-1 sm:ml-2 text-xs sm:text-sm font-semibold text-[hsl(var(--foreground))] font-['Lato']">
                         5.0 Divine
                       </span>
                     </div>
@@ -239,5 +172,77 @@ export default function Hero() {
         </div>
       </div>
     </section>
+
+    {/* Why Choose Section - Below hero on all devices */}
+    <section className="w-full px-4 sm:px-8 lg:px-24 py-12 sm:py-16 bg-gradient-to-br from-white to-[#f0f9f6]">
+      <div className="max-w-6xl mx-auto">
+        {/* Key Features */}
+        <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-xl border-2 border-[#34a870]/20">
+          <h3 className="text-[#1a4d32] font-['Playfair_Display'] text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
+            <span className="text-2xl sm:text-3xl">✨</span>
+            Why Choose GUPTAS AGENCY?
+          </h3>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
+                <span className="text-2xl">🚗</span>
+              </div>
+              <div>
+                <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
+                  Premium Fleet
+                </h4>
+                <p className="text-sm text-[#4d4d4d] font-['Lato']">
+                  Well-maintained AC vehicles with experienced drivers
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
+                <span className="text-2xl">🙏</span>
+              </div>
+              <div>
+                <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
+                  Professional Service
+                </h4>
+                <p className="text-sm text-[#4d4d4d] font-['Lato']">
+                  Courteous drivers with local knowledge and expertise
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
+                <span className="text-2xl">💰</span>
+              </div>
+              <div>
+                <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
+                  Best Prices
+                </h4>
+                <p className="text-sm text-[#4d4d4d] font-['Lato']">
+                  Transparent pricing with no hidden charges
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34a870]/15 to-[#5dbd7f]/15 flex items-center justify-center flex-shrink-0">
+                <span className="text-2xl">⏰</span>
+              </div>
+              <div>
+                <h4 className="font-['Lato'] font-bold text-[#1a4d32] mb-1">
+                  24/7 Support
+                </h4>
+                <p className="text-sm text-[#4d4d4d] font-['Lato']">
+                  Round-the-clock assistance for your journey
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
