@@ -132,9 +132,9 @@ export default function VehicleFleet() {
         
         {/* Premium Badges Row */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8">
-          <div className="px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 backdrop-blur-sm">
+          {/* <div className="px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 backdrop-blur-sm">
             <p className="text-sm font-['Lato'] font-semibold text-emerald-700">✓ ISO Certified Fleet</p>
-          </div>
+          </div> */}
           <div className="px-4 py-2 rounded-lg bg-blue-50 border border-blue-200 backdrop-blur-sm">
             <p className="text-sm font-['Lato'] font-semibold text-blue-700">✓ 5-Star Safety Rating</p>
           </div>

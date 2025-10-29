@@ -180,7 +180,7 @@ export default function Features() {
           </div>
 
           {/* CTA Button */}
-          <div className="mt-8 sm:mt-10">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
             <button 
               onClick={() => {
                 const contactSection = document.getElementById('contact');
@@ -188,12 +188,18 @@ export default function Features() {
                   contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
-              className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] text-white font-['Lato'] font-bold text-sm sm:text-base rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto justify-center"
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] text-white font-['Lato'] font-bold text-sm sm:text-base rounded-xl sm:rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:-translate-y-1"
             >
-              <span>Start Your Journey Today</span>
+              <span>🚗 Start Your Journey</span>
               <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
+            </button>
+            <button 
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-4 border-2 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-sm sm:text-base rounded-xl sm:rounded-full hover:bg-[hsl(var(--sacred-saffron))] hover:text-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            >
+              <span>📞 Call Us</span>
+              <span className="hidden sm:inline">+91 98765 43210</span>
             </button>
           </div>
         </div>
