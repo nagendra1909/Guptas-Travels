@@ -138,95 +138,117 @@ export default function PopularDestinations() {
         >
           <CarouselContent className="-ml-2 sm:-ml-4">
             {destinations.map((destination, index) => (
-              <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-[75%] md:basis-1/2 lg:basis-1/3">
-              <div className="group h-full bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-[hsl(var(--border))]">
-                {/* Featured badge - cleaner design */}
-                {destination.featured && (
-                  <div className="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-md bg-[hsl(var(--sacred-saffron))] text-white text-[10px] font-bold uppercase tracking-wider">
-                    Popular
-                  </div>
-                )}
+              <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3">
+                <div className="group h-full bg-gradient-to-br from-white to-[#f9f9f9] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-[#e0e0e0] hover:border-[#34a870] relative">
+                  {/* Featured badge - premium style */}
+                  {destination.featured && (
+                    <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white text-[11px] font-bold uppercase tracking-widest shadow-lg">
+                      ⭐ Popular
+                    </div>
+                  )}
 
-                {/* Image - reduced height for cleaner look */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={destination.image}
-                    alt={destination.title}
-                    width={724}
-                    height={480}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  
-                  {/* Duration badge - simplified */}
-                  <div className="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-sm">
-                    <span className="text-[10px] font-semibold text-[hsl(var(--foreground))] font-['Lato'] uppercase tracking-wide">
-                      {destination.duration}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content - more compact and clean */}
-                <div className="p-4">
-                  <div className="mb-3">
-                    <h3 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold mb-0.5 leading-tight">
-                      {destination.title}
-                    </h3>
-                    <p className="text-[hsl(var(--sacred-saffron))] font-['Lato'] text-xs font-medium">
-                      {destination.subtitle}
-                    </p>
-                  </div>
-
-                  <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-xs leading-relaxed mb-4 line-clamp-2">
-                    {destination.description}
-                  </p>
-
-                  {/* Price and CTA - cleaner layout */}
-                  <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <span className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-xl font-bold">
-                        {destination.price}
+                  {/* Image - premium styling with overlay */}
+                  <div className="relative h-56 sm:h-64 overflow-hidden">
+                    <img
+                      src={destination.image}
+                      alt={destination.title}
+                      width={724}
+                      height={480}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Duration badge - premium positioning */}
+                    <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg border border-white/50">
+                      <span className="text-[10px] font-bold text-[#34a870] font-['Lato'] uppercase tracking-wide">
+                        ⏱ {destination.duration}
                       </span>
-                      <span className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-[10px]"> /person</span>
                     </div>
-                    <button 
-                      onClick={() => handleBooking(destination.title, destination.price)}
-                      className="px-4 py-1.5 rounded-lg font-['Lato'] font-semibold text-xs transition-all bg-[hsl(var(--sacred-saffron))] text-white hover:bg-[hsl(var(--sacred-saffron))]/90"
-                    >
-                      Book Now
-                    </button>
                   </div>
 
-                  {/* Facilities - minimal icons only */}
-                  <div className="flex items-center justify-center gap-4 pt-3 border-t border-[hsl(var(--border))]">
-                    <div className="flex items-center gap-1 text-[hsl(var(--muted-foreground))] text-[10px] font-['Lato']">
-                      <span className="text-sm">🚗</span>
+                  {/* Content - premium layout */}
+                  <div className="p-5 sm:p-6 flex flex-col">
+                    {/* Title section */}
+                    <div className="mb-3">
+                      <h3 className="text-[#1a4d32] font-['Playfair_Display'] text-lg sm:text-xl font-bold mb-1 leading-tight group-hover:text-[#34a870] transition-colors">
+                        {destination.title}
+                      </h3>
+                      <p className="text-[#34a870] font-['Lato'] text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        {destination.subtitle}
+                      </p>
                     </div>
-                    <div className="flex items-center gap-1 text-[hsl(var(--muted-foreground))] text-[10px] font-['Lato']">
-                      <span className="text-sm">👤</span>
+
+                    {/* Description */}
+                    <p className="text-[#666666] font-['Lato'] text-sm leading-relaxed mb-4 line-clamp-2">
+                      {destination.description}
+                    </p>
+
+                    {/* Highlights/Benefits */}
+                    <div className="mb-4 space-y-2">
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="text-[#34a870]">✓</span>
+                        <span className="text-[#555555] font-['Lato']">Guided tours included</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="text-[#34a870]">✓</span>
+                        <span className="text-[#555555] font-['Lato']">Comfortable transportation</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1 text-[hsl(var(--muted-foreground))] text-[10px] font-['Lato']">
-                      <span className="text-sm">🙏</span>
+
+                    {/* Divider */}
+                    <div className="w-full h-px bg-gradient-to-r from-[#34a870]/20 via-[#34a870] to-[#34a870]/20 rounded-full mb-4"></div>
+
+                    {/* Price and CTA */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <span className="text-[#34a870] font-['Playfair_Display'] text-2xl sm:text-3xl font-bold">
+                          {destination.price}
+                        </span>
+                        <span className="text-[#999999] font-['Lato'] text-xs ml-1">/person</span>
+                      </div>
+                      <button 
+                        onClick={() => handleBooking(destination.title, destination.price)}
+                        className="px-5 py-2.5 rounded-xl font-['Lato'] font-bold text-sm transition-all duration-300 bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-0.5 uppercase tracking-wide"
+                      >
+                        Explore
+                      </button>
+                    </div>
+
+                    {/* Premium features row - compact */}
+                    <div className="flex items-center justify-between pt-3 border-t border-[#e8e8e8]">
+                      <div className="flex items-center gap-1.5 text-[#34a870]">
+                        <span className="text-lg">🚗</span>
+                        <span className="text-xs font-['Lato'] font-medium">Transfer</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-[#34a870]">
+                        <span className="text-lg">👤</span>
+                        <span className="text-xs font-['Lato'] font-medium">Guide</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-[#34a870]">
+                        <span className="text-lg">🙏</span>
+                        <span className="text-xs font-['Lato'] font-medium">Darshan</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="left-0 sm:-left-4 lg:-left-6 w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 border border-[hsl(var(--border))] bg-white hover:bg-[hsl(var(--sacred-saffron))] hover:border-[hsl(var(--sacred-saffron))] hover:text-white transition-all" />
-        <CarouselNext className="right-0 sm:-right-4 lg:-right-6 w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 border border-[hsl(var(--border))] bg-white hover:bg-[hsl(var(--sacred-saffron))] hover:border-[hsl(var(--sacred-saffron))] hover:text-white transition-all" />
-      </Carousel>
-      
-      {/* Mobile swipe indicator - minimal */}
-      <div className="flex sm:hidden justify-center mt-6">
-        <div className="text-[hsl(var(--muted-foreground))] text-[10px] font-['Lato'] flex items-center gap-2 px-3 py-1.5 rounded-full bg-[hsl(var(--background))] border border-[hsl(var(--border))]">
-          <span className="text-xs">←</span>
-          <span className="uppercase tracking-wider">Swipe</span>
-          <span className="text-xs">→</span>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          
+          {/* Premium carousel controls */}
+          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl" />
+          <CarouselNext className="right-0 sm:-right-6 lg:-right-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl" />
+        </Carousel>
+        
+        {/* Mobile swipe indicator - premium style */}
+        <div className="flex sm:hidden justify-center mt-8">
+          <div className="text-[#34a870] text-xs font-['Lato'] flex items-center gap-3 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#f0f9f6] to-white border-2 border-[#34a870]/30 font-semibold uppercase tracking-wider">
+            <span className="text-lg animate-bounce">←</span>
+            <span>Swipe for More</span>
+            <span className="text-lg animate-bounce">→</span>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );
