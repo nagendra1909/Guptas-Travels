@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Green & White Premium Palette */
+    --background: 140 40% 96%; /* Very light mint green background */
+    --foreground: 120 40% 15%; /* Dark forest green text */
+
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 120 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 40% 15%;
+
+    /* Emerald green primary */
+    --primary: 140 75% 46%; /* Emerald green #34a870 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Light seafoam mint accent */
+    --secondary: 160 85% 68%; /* Light seafoam #b8e6d5 */
+    --secondary-foreground: 120 40% 15%;
+
+    --muted: 140 30% 80%;
+    --muted-foreground: 120 40% 40%;
+
+    /* Sage green accent */
+    --accent: 140 70% 55%; /* Light sage #5dbd7f */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 30% 85%;
+    --input: 140 30% 90%;
+    --ring: 140 75% 46%;
+
+    --radius: 0.75rem;
+
+    /* Custom light green palette */
+    --emerald-green: 140 75% 46%;
+    --light-seafoam: 160 85% 68%;
+    --light-sage: 140 70% 55%;
+    --light-mint: 140 40% 96%;
+    --dark-forest: 120 40% 15%;
+  }
+
+  .dark {
+    /* Dark mode also uses light green & white concept */
+    --background: 120 40% 12%;
+    --foreground: 140 40% 95%;
+
+    --card: 120 40% 18%;
+    --card-foreground: 140 40% 95%;
+
+    --popover: 120 40% 18%;
+    --popover-foreground: 140 40% 95%;
+
+    --primary: 140 75% 55%;
+    --primary-foreground: 120 40% 12%;
+
+    --secondary: 160 85% 65%;
+    --secondary-foreground: 120 40% 12%;
+
+    --muted: 120 20% 30%;
+    --muted-foreground: 140 40% 80%;
+
+    --accent: 140 70% 60%;
+    --accent-foreground: 120 40% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 30% 25%;
+    --input: 120 30% 25%;
+    --ring: 140 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[hsl(var(--background))] text-foreground;
+    font-family:
+      "Lato",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+/* Premium design utilities */
+@layer utilities {
+  /* Glassmorphism effect - light green */
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 168, 112, 0.15);
+  }
+
+  .glassmorphism-dark {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(52, 168, 112, 0.2);
+  }
+
+  /* Emerald glow effect */
+  .emerald-glow {
+    box-shadow: 0 0 20px rgba(52, 168, 112, 0.25);
+  }
+
+  .emerald-glow-sm {
+    box-shadow: 0 0 12px rgba(52, 168, 112, 0.15);
+  }
+
+  /* Green gradients - light palette */
+  .gradient-emerald {
+    background: linear-gradient(135deg, 
+      #34a870 0%, 
+      #5dbd7f 50%,
+      #b8e6d5 100%
+    );
+  }
+
+  .gradient-premium {
+    background: linear-gradient(135deg, 
+      #e8f5e9 0%, 
+      #b8e6d5 50%,
+      #34a870 100%
+    );
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #34a870, #5dbd7f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover effects */
+  .hover-emerald:hover {
+    color: #34a870;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Border utilities */
+  .border-emerald-subtle {
+    border-color: rgba(52, 168, 112, 0.2);
+  }
+
+  .border-emerald-glow {
+    border-color: #34a870;
+    box-shadow: 0 0 15px rgba(52, 168, 112, 0.15);
+  }
+}
