@@ -6,8 +6,8 @@ export default function Features() {
       <div className="absolute bottom-0 left-0 w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-gradient-to-tr from-[hsl(var(--kumkum-red))/4] to-transparent rounded-full blur-3xl -z-10"></div>
       
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-10 lg:gap-12">
-        {/* Left side - Image section */}
-        <div className="flex-1 w-full max-w-lg order-2 lg:order-1">
+        {/* Left side - Image section - Hidden on mobile & tablet, visible on desktop */}
+        <div className="hidden lg:flex flex-1 w-full max-w-lg order-2 lg:order-1">
           <div className="relative group">
             {/* Decorative ring background */}
             <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[hsl(var(--sacred-saffron))] via-[hsl(var(--temple-gold))] to-[hsl(var(--kumkum-red))] opacity-15 blur-2xl scale-105 group-hover:scale-110 transition-transform duration-700"></div>
@@ -71,8 +71,8 @@ export default function Features() {
           </div>
         </div>
 
-        {/* Right side - Content */}
-        <div className="flex-1 w-full order-1 lg:order-2">
+        {/* Right side - Content - Full width on mobile, shares width on desktop */}
+        <div className="w-full lg:flex-1 order-1 lg:order-2">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))/15] to-[hsl(var(--kumkum-red))/10] mb-3 sm:mb-4 border border-[hsl(var(--sacred-saffron))/20] hover:scale-105 transition-transform duration-300">
             <span className="text-lg sm:text-xl">✨</span>
             <span className="text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-xs sm:text-sm tracking-widest">
