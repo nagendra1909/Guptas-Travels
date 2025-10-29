@@ -297,44 +297,45 @@ export default function VehicleFleet() {
       </div>
 
       {/* Premium Service Standards Section */}
-      <div className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-8 sm:p-12 shadow-xl border-2 border-emerald-100/50">
+      <div className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-6 sm:p-12 shadow-xl border-2 border-emerald-100/50">
         {/* Section Title */}
-        <div className="text-center mb-12 sm:mb-14">
-          <h3 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-3xl sm:text-4xl font-bold mb-3">
+        <div className="text-center mb-8 sm:mb-12">
+          <h3 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-2xl sm:text-4xl font-bold mb-2 sm:mb-3">
             Enterprise Service Standards
           </h3>
-          <p className="text-[hsl(var(--muted-foreground))] text-lg font-['Lato'] max-w-2xl mx-auto">
+          <p className="text-[hsl(var(--muted-foreground))] text-base sm:text-lg font-['Lato'] max-w-2xl mx-auto">
             Every journey backed by our commitment to excellence
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 mb-12 sm:mb-14">
+        {/* Optimized Grid - Responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* What's Included */}
-          <div className="bg-white rounded-xl p-7 border-2 border-emerald-100/50 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg">
-                <span className="text-white text-3xl">✓</span>
+          <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-emerald-100/50 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
+                <span className="text-white text-2xl">✓</span>
               </div>
-              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-xl font-bold">
+              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold">
                 Inclusions
               </h4>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {[
-                { icon: "👨‍💼", title: "Elite Driver", desc: "Certified professionals with 5+ years experience" },
-                { icon: "🔧", title: "Premium Maintenance", desc: "Regular servicing and sanitization included" },
-                { icon: "🗺️", title: "GPS Navigation", desc: "Real-time tracking and optimal route planning" },
-                { icon: "📞", title: "24/7 Concierge", desc: "Dedicated support for your journey" }
+                { icon: "👨‍💼", title: "Elite Driver", desc: "5+ years expert" },
+                { icon: "🔧", title: "Premium Maintenance", desc: "Regular servicing" },
+                { icon: "🗺️", title: "GPS Navigation", desc: "Real-time tracking" },
+                { icon: "📞", title: "24/7 Concierge", desc: "Always available" }
               ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors">
-                    <span className="text-lg">{item.icon}</span>
+                <div key={idx} className="flex items-start gap-2 group">
+                  <div className="w-8 h-8 rounded-md bg-emerald-50 flex items-center justify-center flex-shrink-0 text-sm">
+                    {item.icon}
                   </div>
-                  <div>
-                    <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-sm">
+                  <div className="min-w-0">
+                    <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-xs sm:text-sm">
                       {item.title}
                     </p>
-                    <p className="text-[hsl(var(--muted-foreground))] text-xs font-['Lato'] mt-1">
+                    <p className="text-[hsl(var(--muted-foreground))] text-xs font-['Lato']">
                       {item.desc}
                     </p>
                   </div>
@@ -344,31 +345,31 @@ export default function VehicleFleet() {
           </div>
 
           {/* Safety & Quality */}
-          <div className="bg-white rounded-xl p-7 border-2 border-blue-100/50 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
-                <span className="text-white text-3xl">🛡️</span>
+          <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-blue-100/50 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
+                <span className="text-white text-2xl">🛡️</span>
               </div>
-              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-xl font-bold">
+              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold">
                 Safety & Quality
               </h4>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {[
-                { icon: "⭐", title: "5-Star Safety", desc: "Advanced ABS, airbags, and stability control" },
-                { icon: "🔍", title: "Quality Audits", desc: "Monthly inspections and certifications" },
-                { icon: "🧼", title: "Hygiene Protocol", desc: "ISO-certified sanitization procedures" },
-                { icon: "📋", title: "Compliance", desc: "Full RTO and insurance documentation" }
+                { icon: "⭐", title: "5-Star Safety", desc: "ABS & airbags" },
+                { icon: "🔍", title: "Quality Audits", desc: "Monthly checks" },
+                { icon: "🧼", title: "Hygiene Protocol", desc: "ISO-certified" },
+                { icon: "📋", title: "Compliance", desc: "Full insurance" }
               ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
-                    <span className="text-lg">{item.icon}</span>
+                <div key={idx} className="flex items-start gap-2 group">
+                  <div className="w-8 h-8 rounded-md bg-blue-50 flex items-center justify-center flex-shrink-0 text-sm">
+                    {item.icon}
                   </div>
-                  <div>
-                    <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-sm">
+                  <div className="min-w-0">
+                    <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-xs sm:text-sm">
                       {item.title}
                     </p>
-                    <p className="text-[hsl(var(--muted-foreground))] text-xs font-['Lato'] mt-1">
+                    <p className="text-[hsl(var(--muted-foreground))] text-xs font-['Lato']">
                       {item.desc}
                     </p>
                   </div>
@@ -377,36 +378,33 @@ export default function VehicleFleet() {
             </ul>
           </div>
 
-          {/* Additional Charges */}
-          <div className="bg-white rounded-xl p-7 border-2 border-purple-100/50 shadow-md hover:shadow-lg transition-shadow">
-            <div className="flex items-center gap-3 mb-7">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg">
-                <span className="text-white text-3xl">💳</span>
+          {/* Additional Services */}
+          <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-purple-100/50 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md">
+                <span className="text-white text-2xl">💳</span>
               </div>
-              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-xl font-bold">
-                Additional Services
+              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold">
+                Additional Charges
               </h4>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {[
-                { icon: "🍽️", title: "Driver Meal", cost: "₹300/day", desc: "Breakfast & lunch included" },
-                { icon: "🛣️", title: "Toll & Parking", cost: "As actual", desc: "Transparent billing" },
-                { icon: "🏛️", title: "State Taxes", cost: "As actual", desc: "Interstate permits" },
-                { icon: "🎯", title: "Customized Tours", cost: "Quote based", desc: "Personalized itineraries" }
+                { icon: "🍽️", title: "Driver Meal", cost: "₹300" },
+                { icon: "🛣️", title: "Toll & Parking", cost: "Actual" },
+                { icon: "🏛️", title: "State Taxes", cost: "Actual" },
+                { icon: "🎯", title: "Custom Tours", cost: "Quote" }
               ].map((item, idx) => (
-                <div key={idx} className="flex justify-between items-start p-3 rounded-lg bg-gradient-to-r from-purple-50 to-transparent border border-purple-100/50 group hover:bg-purple-50 transition-colors">
-                  <div className="flex items-start gap-2 flex-1">
+                <div key={idx} className="flex justify-between items-start p-2 rounded-lg bg-purple-50/50 border border-purple-100/30">
+                  <div className="flex items-center gap-2">
                     <span className="text-lg flex-shrink-0">{item.icon}</span>
                     <div className="min-w-0">
-                      <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-sm">
+                      <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-xs sm:text-sm">
                         {item.title}
-                      </p>
-                      <p className="text-[hsl(var(--muted-foreground))] text-xs font-['Lato']">
-                        {item.desc}
                       </p>
                     </div>
                   </div>
-                  <span className="text-purple-700 font-['Lato'] font-bold text-sm flex-shrink-0 ml-2">{item.cost}</span>
+                  <span className="text-purple-700 font-['Lato'] font-bold text-xs flex-shrink-0 ml-2">{item.cost}</span>
                 </div>
               ))}
             </div>
@@ -414,7 +412,7 @@ export default function VehicleFleet() {
         </div>
 
         {/* Premium Guarantee */}
-        <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-7 border-l-4 border-emerald-600">
+        {/* <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-7 border-l-4 border-emerald-600">
           <div className="flex items-start gap-4">
             <span className="text-3xl flex-shrink-0">🏆</span>
             <div>
@@ -427,7 +425,7 @@ export default function VehicleFleet() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* CTA Section */}
         <div className="mt-12 pt-10 border-t-2 border-emerald-100/50">
