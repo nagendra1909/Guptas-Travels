@@ -12,8 +12,7 @@ const destinations = [
     title: "Sri Venkateswara Temple",
     subtitle: "Divine Darshan & Prasadam",
     price: "₹2,500",
-    image:
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=724&h=480&fit=crop",
+    image: "/placeholder.svg",
     featured: true,
     description: "Experience the divine presence of Lord Balaji at Tirumala",
     duration: "1 Day",
@@ -31,8 +30,7 @@ const destinations = [
     title: "Kanipakam Vinayaka",
     subtitle: "Swayambhu Ganesha Temple",
     price: "₹2,200",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=724&h=480&fit=crop",
+    image: "/placeholder.svg",
     description: "Self-manifested Vinayaka idol, 70 km from Tirupati",
     duration: "Half Day",
   },

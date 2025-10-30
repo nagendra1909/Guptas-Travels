@@ -11,8 +11,7 @@ const categories = [
     name: "Tirupati Temples",
     description: "Lord Venkateswara & nearby shrines",
     icon: "🛕",
-    image:
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Sri kalahasti",
@@ -54,8 +53,7 @@ const categories = [
     name: "Sri Venkateswara Zoo",
     description: "Wildlife & nature park",
     icon: "🦁",
-    image:
-      "https://images.unsplash.com/photo-1549366021-9f761d450615?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Papavinasanam",
