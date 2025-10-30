@@ -22,9 +22,9 @@ const destinations = [
     title: "Srikalahasti Temple",
     subtitle: "Rahu-Ketu Pooja Special",
     price: "₹2,800",
-    image:
-      "/srikalahasti.jpg",
-    description: "Famous temple for Rahu-Ketu dosham removal, 36 km from Tirupati",
+    image: "/srikalahasti.jpg",
+    description:
+      "Famous temple for Rahu-Ketu dosham removal, 36 km from Tirupati",
     duration: "Half Day",
   },
   {
@@ -40,8 +40,7 @@ const destinations = [
     title: "Chandragiri Fort",
     subtitle: "Historical Heritage Site",
     price: "₹1,800",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=724&h=480&fit=crop",
+    image: "/placeholder.svg",
     description: "11th-century fort with palaces, just 15 km from Tirupati",
     duration: "Half Day",
   },
@@ -49,19 +48,19 @@ const destinations = [
     title: "Talakona Waterfalls",
     subtitle: "Highest Waterfall in AP",
     price: "₹3,200",
-    image:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=724&h=480&fit=crop",
+    image: "/placeholder.svg",
     featured: true,
-    description: "270 feet waterfall in Sri Venkateswara National Park, 50 km away",
+    description:
+      "270 feet waterfall in Sri Venkateswara National Park, 50 km away",
     duration: "1 Day",
   },
   {
     title: "Srinivasam Mangapuram",
     subtitle: "Ancient Vishnu Temple",
     price: "₹2,000",
-    image:
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=724&h=480&fit=crop",
-    description: "Lord Venkateswara temple where He got ready for marriage, 12 km away",
+    image: "/placeholder.svg",
+    description:
+      "Lord Venkateswara temple where He got ready for marriage, 12 km away",
     duration: "Half Day",
   },
   // {
@@ -77,8 +76,7 @@ const destinations = [
     title: "Sri Venkateswara Zoo",
     subtitle: "Wildlife & Nature Park",
     price: "₹1,500",
-    image:
-      "https://images.unsplash.com/photo-1549366021-9f761d450615?w=724&h=480&fit=crop",
+    image: "/placeholder.svg",
     description: "One of the best zoos in South India, within Tirupati city",
     duration: "Half Day",
   },

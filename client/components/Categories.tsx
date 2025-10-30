@@ -18,43 +18,37 @@ const categories = [
     name: "Sri kalahasti",
     description: "Rahu-Ketu temple tours",
     icon: "🕉️",
-    image:
-      "/srikalahasti.jpg",
+    image: "/srikalahasti.jpg",
   },
   {
     name: "Kanipakam",
     description: "Vinayaka darshan packages",
     icon: "🐘",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=940&h=480&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Talakona Falls",
     description: "Waterfall & temple trek",
     icon: "💧",
-    image:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Horsley Hills",
     description: "Hill station getaway",
     icon: "⛰️",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Chandragiri Fort",
     description: "Historical heritage site",
     icon: "🏰",
-    image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Nagalapuram Falls",
     description: "Trekking & waterfalls",
     icon: "🏞️",
-    image:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Sri Venkateswara Zoo",
@@ -67,15 +61,13 @@ const categories = [
     name: "Papavinasanam",
     description: "Sacred waterfall temple",
     icon: "🙏",
-    image:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
   {
     name: "Akasa Ganga",
     description: "Mountain spring trek",
     icon: "⛲",
-    image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=340&h=240&fit=crop",
+    image: "/placeholder.svg",
   },
 ];
 
