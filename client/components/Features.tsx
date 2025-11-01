@@ -71,7 +71,7 @@ export default function Features() {
             {/* Additional decorative element - experience badge - Hidden on desktop */}
             <div className="hidden md:flex lg:hidden absolute top-1/2 -translate-y-1/2 -left-4 bg-gradient-to-br from-[hsl(var(--temple-gold))] to-[hsl(var(--sacred-saffron))] rounded-full w-16 h-16 flex-col items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 z-10 border-4 border-white">
               <div className="font-['Playfair_Display'] text-lg font-bold leading-none">
-                28+
+                15+
               </div>
               <div className="font-['Lato'] text-[9px] font-semibold mt-0.5">
                 YEARS
@@ -100,7 +100,7 @@ export default function Features() {
           <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-sm sm:text-base leading-relaxed mb-6 sm:mb-7 max-w-2xl">
             With over{" "}
             <span className="text-[hsl(var(--sacred-saffron))] font-bold">
-              28 years of service
+              15 years of service
             </span>
             , we provide comfortable transportation for pilgrims visiting
             Tirupati and sacred temples. Our commitment to excellence and
@@ -113,7 +113,7 @@ export default function Features() {
             <div className="group text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-gradient-to-br from-white via-[hsl(var(--sacred-saffron))/5] to-white border-2 border-[hsl(var(--sacred-saffron))/20] hover:border-[hsl(var(--sacred-saffron))] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--temple-gold))] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               <div className="text-[hsl(var(--sacred-saffron))] font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform duration-300">
-                28+
+                15+
               </div>
               <div className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-[10px] sm:text-xs font-semibold line-clamp-2">
                 Years

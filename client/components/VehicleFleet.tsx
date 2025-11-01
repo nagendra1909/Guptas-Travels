@@ -171,13 +171,11 @@ export default function VehicleFleet() {
 
               {/* Premium Badge - Top Right */}
               <div className={`absolute top-4 right-4 z-20 bg-gradient-to-r ${vehicle.accentColor} text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1`}>
-                <span>{vehicle.icon}</span>
                 <span>{vehicle.badge}</span>
               </div>
               
               {/* Capacity Badge - Bottom Left */}
               <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-lg shadow-lg flex items-center gap-1.5 border border-white/50">
-                <span className="text-lg">{vehicle.icon}</span>
                 <div>
                   <p className="text-xs text-[hsl(var(--muted-foreground))] font-['Lato']">Capacity</p>
                   <p className="text-[hsl(var(--foreground))] font-bold text-xs font-['Lato']">
@@ -329,9 +327,6 @@ export default function VehicleFleet() {
                 { icon: "📞", title: "24/7 Concierge", desc: "Always available" }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2 group">
-                  <div className="w-8 h-8 rounded-md bg-emerald-50 flex items-center justify-center flex-shrink-0 text-sm">
-                    {item.icon}
-                  </div>
                   <div className="min-w-0">
                     <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-xs sm:text-sm">
                       {item.title}
@@ -363,9 +358,6 @@ export default function VehicleFleet() {
                 { icon: "📋", title: "Compliance", desc: "Full insurance" }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2 group">
-                  <div className="w-8 h-8 rounded-md bg-blue-50 flex items-center justify-center flex-shrink-0 text-sm">
-                    {item.icon}
-                  </div>
                   <div className="min-w-0">
                     <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-xs sm:text-sm">
                       {item.title}
@@ -398,7 +390,6 @@ export default function VehicleFleet() {
               ].map((item, idx) => (
                 <div key={idx} className="flex justify-between items-start p-2 rounded-lg bg-purple-50/50 border border-purple-100/30">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg flex-shrink-0">{item.icon}</span>
                     <div className="min-w-0">
                       <p className="text-[hsl(var(--foreground))] font-['Lato'] font-semibold text-xs sm:text-sm">
                         {item.title}
