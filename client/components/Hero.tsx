@@ -1,4 +1,5 @@
 import { useToast } from "@/hooks/use-toast";
+import { Phone, ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   const { toast } = useToast();
@@ -93,14 +94,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
             <button className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white font-['Lato'] font-bold text-sm sm:text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto">
               <span>Book Your Ride Now</span>
-              <span className="text-lg sm:text-xl">→</span>
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button 
               onClick={handlePhoneClick}
               className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <a href="tel:+919014486017" className="flex items-center gap-2 w-full sm:w-auto justify-center">
-                <span>📞</span>
+                <Phone className="w-5 h-5" />
                 <span className="hidden sm:inline">Call: +91 9014486017</span>
                 <span className="sm:hidden">+91 9014486017</span>
               </a>

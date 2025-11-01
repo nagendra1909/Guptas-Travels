@@ -104,6 +104,7 @@ const vehicles = [
 ];
 
 import { useState } from "react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function VehicleFleet() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
@@ -438,15 +439,15 @@ export default function VehicleFleet() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
               <a href="tel:+919014486017" className="px-10 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center gap-2 whitespace-nowrap">
-                <span>📞</span>
+                <Phone className="w-5 h-5" />
                 <span>Call: +91 9014486017</span>
               </a>
               <button className="px-10 py-4 rounded-xl border-2 border-emerald-600 text-emerald-700 font-['Lato'] font-bold text-lg hover:bg-emerald-600 hover:text-white transition-all flex items-center gap-2 whitespace-nowrap">
-                <span>💬</span>
+                <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp Us</span>
               </button>
               <a href="mailto:info@guptasagency.com" className="px-10 py-4 rounded-xl bg-blue-50 border-2 border-blue-200 text-blue-700 font-['Lato'] font-bold text-lg hover:bg-blue-100 transition-all flex items-center gap-2 whitespace-nowrap">
-                <span>📧</span>
+                <Mail className="w-5 h-5" />
                 <span>Email Inquiry</span>
               </a>
             </div>

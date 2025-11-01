@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
+import { Car, Users, ArrowRight } from "lucide-react";
 
 const destinations = [
   {
@@ -214,15 +215,15 @@ export default function PopularDestinations() {
                     {/* Premium features row - compact */}
                     <div className="flex items-center justify-between pt-3 border-t border-[#e8e8e8]">
                       <div className="flex items-center gap-1.5 text-[#34a870]">
-                        <span className="text-lg">🚗</span>
+                        <Car className="w-4 h-4" />
                         <span className="text-xs font-['Lato'] font-medium">Transfer</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-[#34a870]">
-                        <span className="text-lg">👤</span>
+                        <Users className="w-4 h-4" />
                         <span className="text-xs font-['Lato'] font-medium">Guide</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-[#34a870]">
-                        <span className="text-lg">🙏</span>
+                        <Users className="w-4 h-4" />
                         <span className="text-xs font-['Lato'] font-medium">Darshan</span>
                       </div>
                     </div>
@@ -240,9 +241,9 @@ export default function PopularDestinations() {
         {/* Mobile swipe indicator - premium style */}
         <div className="flex sm:hidden justify-center mt-8">
           <div className="text-[#34a870] text-xs font-['Lato'] flex items-center gap-3 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#f0f9f6] to-white border-2 border-[#34a870]/30 font-semibold uppercase tracking-wider">
-            <span className="text-lg animate-bounce">←</span>
+            <ArrowRight className="w-4 h-4 animate-bounce -scale-x-100" />
             <span>Swipe for More</span>
-            <span className="text-lg animate-bounce">→</span>
+            <ArrowRight className="w-4 h-4 animate-bounce" />
           </div>
         </div>
       </div>

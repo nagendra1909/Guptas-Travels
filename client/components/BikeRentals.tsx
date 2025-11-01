@@ -1,3 +1,5 @@
+import { Bike, ArrowRight, MessageCircle, CheckCircle2, Sparkles } from "lucide-react";
+
 const bikes = [
   {
     name: "Honda Activa",
@@ -98,7 +100,7 @@ export default function BikeRentals() {
         <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))/10] to-[hsl(var(--kumkum-red))/10] border-2 border-[hsl(var(--sacred-saffron))/30] mb-6 shadow-lg backdrop-blur-sm">
           <span className="relative flex items-center justify-center">
             <span className="absolute inline-flex h-full w-full rounded-full bg-[hsl(var(--sacred-saffron))] opacity-30 animate-ping"></span>
-            <span className="relative text-3xl">🏍️</span>
+            <Bike className="w-7 h-7 text-[hsl(var(--sacred-saffron))]" />
           </span>
           <span className="text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-sm sm:text-base tracking-wider uppercase">
             Premium Bike Rentals
@@ -151,12 +153,12 @@ export default function BikeRentals() {
         {/* Quick CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] text-white font-['Lato'] font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 group">
-            <span className="text-2xl">🏍️</span>
+            <Bike className="w-6 h-6" />
             <span>Book Your Bike Now</span>
-            <span className="text-xl group-hover:translate-x-2 transition-transform">→</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </button>
           <button className="px-8 py-4 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 backdrop-blur-sm bg-white/50">
-            <span className="text-xl">💬</span>
+            <MessageCircle className="w-5 h-5" />
             <span>WhatsApp Inquiry</span>
           </button>
         </div>
@@ -282,7 +284,7 @@ export default function BikeRentals() {
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 sm:p-12 shadow-2xl border-2 border-[hsl(var(--temple-gold))]/20 relative z-10">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))]/10 to-[hsl(var(--kumkum-red))]/10 border border-[hsl(var(--sacred-saffron))]/30 mb-4">
-            <span className="text-2xl">📋</span>
+            <CheckCircle2 className="w-5 h-5 text-[hsl(var(--sacred-saffron))]" />
             <span className="text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-sm tracking-wide">RENTAL INFORMATION</span>
           </div>
           <h3 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-3xl sm:text-4xl font-bold">

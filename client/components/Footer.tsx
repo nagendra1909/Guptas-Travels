@@ -1,4 +1,5 @@
 import { useToast } from "@/hooks/use-toast";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -147,22 +148,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4 text-[#4d4d4d] font-['Lato'] text-sm">
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
-                <span>📞</span>
+                <Phone className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
                 <a href="tel:+919014486017" className="hover:underline">
                   +91 9014486017
                 </a>
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
-                <span>✉️</span>
+                <Mail className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
                 <a href="mailto:info@guptasagency.com" className="hover:underline">
                   info@guptasagency.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <span>📍</span> Andhra Pradesh, India
+                <MapPin className="w-4 h-4 flex-shrink-0 text-[#34a870]" /> Andhra Pradesh, India
               </li>
               <li className="flex items-center gap-2">
-                <span>⏰</span> 24/7 Available
+                <Clock className="w-4 h-4 flex-shrink-0 text-[#34a870]" /> 24/7 Available
               </li>
             </ul>
           </div>

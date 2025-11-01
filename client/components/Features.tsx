@@ -1,3 +1,5 @@
+import { Sparkles, Users, Zap } from "lucide-react";
+
 export default function Features() {
   return (
     <section className="w-full px-4 sm:px-8 lg:px-24 py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-[hsl(var(--background))] via-white to-[hsl(var(--sacred-saffron))/3] relative overflow-hidden">
@@ -37,7 +39,7 @@ export default function Features() {
             <div className="hidden sm:block absolute -bottom-4 sm:-bottom-6 -right-3 sm:-right-6 bg-white rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-4 border-l-4 border-[hsl(var(--sacred-saffron))] hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm bg-white/95 z-10">
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[hsl(var(--sacred-saffron))]/20 to-[hsl(var(--kumkum-red))]/20 flex items-center justify-center animate-pulse">
-                  <span className="text-2xl sm:text-3xl">🙏</span>
+                  <Users className="w-6 h-6 sm:w-7 sm:h-7 text-[hsl(var(--sacred-saffron))]" />
                 </div>
                 <div>
                   <div className="text-[hsl(var(--sacred-saffron))] font-['Playfair_Display'] text-2xl sm:text-3xl font-bold leading-tight">
@@ -52,8 +54,8 @@ export default function Features() {
 
             <div className="hidden sm:block absolute -top-4 sm:-top-6 -left-3 sm:-left-6 bg-gradient-to-br from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] rounded-lg sm:rounded-xl shadow-lg p-3 sm:p-4 text-white hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 z-10">
               <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
-                  <span className="text-2xl sm:text-3xl animate-pulse">🕉️</span>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30 animate-pulse">
+                  <Zap className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <div>
                   <div className="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold leading-tight">
@@ -81,7 +83,7 @@ export default function Features() {
         {/* Right side - Content - Full width on mobile, shares width on desktop */}
         <div className="w-full lg:flex-1 order-1 lg:order-2">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))/15] to-[hsl(var(--kumkum-red))/10] mb-3 sm:mb-4 border border-[hsl(var(--sacred-saffron))/20] hover:scale-105 transition-transform duration-300">
-            <span className="text-lg sm:text-xl">✨</span>
+            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[hsl(var(--sacred-saffron))]" />
             <span className="text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-xs sm:text-sm tracking-widest">
               ABOUT GUPTAS TRAVELS
             </span>

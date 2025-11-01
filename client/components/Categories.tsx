@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ArrowRight } from "lucide-react";
 
 const categories = [
   {
@@ -153,9 +154,9 @@ export default function Categories() {
         {/* Premium Mobile Swipe Indicator */}
         <div className="flex sm:hidden justify-center mt-8">
           <div className="text-[#34a870] text-xs sm:text-sm font-['Lato'] flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[#f0f9f6] to-white border-2 border-[#34a870]/40 font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all">
-            <span className="text-xl animate-bounce">←</span>
+            <ArrowRight className="w-5 h-5 animate-bounce -scale-x-100" />
             <span>Swipe for More</span>
-            <span className="text-xl animate-bounce">→</span>
+            <ArrowRight className="w-5 h-5 animate-bounce" />
           </div>
         </div>
       </div>

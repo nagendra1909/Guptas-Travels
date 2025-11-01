@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Zap, Users } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -65,7 +66,7 @@ const NotFound = () => {
           </h1>
           <div className="flex items-center justify-center gap-4 mt-4">
             <div className="h-1 w-20 bg-gradient-to-r from-transparent via-[hsl(var(--sacred-saffron))] to-transparent"></div>
-            <span className="text-4xl">🕉️</span>
+            <Zap className="w-8 h-8 text-[hsl(var(--sacred-saffron))]" />
             <div className="h-1 w-20 bg-gradient-to-r from-transparent via-[hsl(var(--temple-gold))] to-transparent"></div>
           </div>
         </div>
@@ -145,7 +146,7 @@ const NotFound = () => {
         {/* Decorative element */}
         <div className="mt-16">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-[hsl(var(--border))] shadow-md">
-            <span className="text-2xl">🙏</span>
+            <Users className="w-6 h-6 text-[hsl(var(--sacred-saffron))]" />
             <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-sm">
               <span className="font-bold text-[hsl(var(--sacred-saffron))]">GUPTAS Travels</span> - Your trusted pilgrimage partner
             </p>
