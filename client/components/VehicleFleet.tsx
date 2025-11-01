@@ -433,10 +433,10 @@ export default function VehicleFleet() {
                 <Phone className="w-5 h-5" />
                 <span>Call: +91 9014486017</span>
               </a>
-              <button className="px-10 py-4 rounded-xl border-2 border-emerald-600 text-emerald-700 font-['Lato'] font-bold text-lg hover:bg-emerald-600 hover:text-white transition-all flex items-center gap-2 whitespace-nowrap">
+              <a href="https://wa.me/919014486017?text=Hi%20GUPTAS%20AGENCY" target="_blank" rel="noopener noreferrer" className="px-10 py-4 rounded-xl border-2 border-emerald-600 text-emerald-700 font-['Lato'] font-bold text-lg hover:bg-emerald-600 hover:text-white transition-all flex items-center gap-2 whitespace-nowrap">
                 <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp Us</span>
-              </button>
+              </a>
               <a href="mailto:info@guptasagency.com" className="px-10 py-4 rounded-xl bg-blue-50 border-2 border-blue-200 text-blue-700 font-['Lato'] font-bold text-lg hover:bg-blue-100 transition-all flex items-center gap-2 whitespace-nowrap">
                 <Mail className="w-5 h-5" />
                 <span>Email Inquiry</span>
