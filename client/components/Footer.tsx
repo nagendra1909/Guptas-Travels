@@ -172,7 +172,7 @@ export default function Footer() {
 
       <div className="border-t-2 border-[#34a870]/20 pt-6 sm:pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6">
         <p className="text-[#666666] font-['Lato'] text-xs sm:text-sm text-center lg:text-left">
-          © 2024 GUPTAS AGENCY. All rights reserved.
+          © 2025 GUPTAS AGENCY. All rights reserved.
         </p>
         <div className="flex items-center gap-3 sm:gap-4">
           <a
