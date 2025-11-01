@@ -9,7 +9,7 @@ export default function Hero() {
       description: (
         <div className="mt-2 space-y-2">
           <p className="font-semibold text-[hsl(var(--sacred-saffron))]">
-            +91 98765 43210
+            +91 9014486017
           </p>
           <p className="text-sm">
             We're available 24/7 to assist you
@@ -100,8 +100,8 @@ export default function Hero() {
               className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <span>📞</span>
-              <span className="hidden sm:inline">Call: +91 98765 43210</span>
-              <span className="sm:hidden">+91 98765 43210</span>
+              <span className="hidden sm:inline">Call: +91 9014486017</span>
+              <span className="sm:hidden">+91 9014486017</span>
             </button>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default function Footer() {
       description: (
         <div className="mt-2 space-y-2">
           <p className="font-semibold text-[#34a870]">
-            +91 98765 43210
+            +91 9014486017
           </p>
           <p className="text-sm text-[#1a4d32]">
             Call us 24/7 for bookings & assistance
@@ -149,7 +149,7 @@ export default function Footer() {
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
                 <span>📞</span>
                 <button onClick={handlePhoneClick} className="hover:underline">
-                  +91 98765 43210
+                  +91 9014486017
                 </button>
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
