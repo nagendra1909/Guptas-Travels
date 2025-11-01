@@ -99,9 +99,11 @@ export default function Hero() {
               onClick={handlePhoneClick}
               className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
             >
-              <span>📞</span>
-              <span className="hidden sm:inline">Call: +91 9014486017</span>
-              <span className="sm:hidden">+91 9014486017</span>
+              <a href="tel:+919014486017" className="flex items-center gap-2 w-full sm:w-auto justify-center">
+                <span>📞</span>
+                <span className="hidden sm:inline">Call: +91 9014486017</span>
+                <span className="sm:hidden">+91 9014486017</span>
+              </a>
             </button>
           </div>
         </div>

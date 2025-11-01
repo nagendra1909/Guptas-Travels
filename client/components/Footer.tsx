@@ -148,13 +148,15 @@ export default function Footer() {
             <ul className="space-y-4 text-[#4d4d4d] font-['Lato'] text-sm">
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
                 <span>📞</span>
-                <button onClick={handlePhoneClick} className="hover:underline">
+                <a href="tel:+919014486017" className="hover:underline">
                   +91 9014486017
-                </button>
+                </a>
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
                 <span>✉️</span>
-                <a href="mailto:info@guptasagency.com">info@guptasagency.com</a>
+                <a href="mailto:info@guptasagency.com" className="hover:underline">
+                  info@guptasagency.com
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <span>📍</span> Andhra Pradesh, India
