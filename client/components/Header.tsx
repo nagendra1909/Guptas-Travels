@@ -64,7 +64,7 @@ export default function Header() {
           <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
             <img 
               src="/gupta_logo_text.png" 
-              alt="GUPTAS AGENCY" 
+              alt="GUPTA Travels" 
               width={80}
               height={80}
               loading="eager"

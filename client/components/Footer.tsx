@@ -185,7 +185,7 @@ export default function Footer() {
         <p className="text-[#666666] font-['Lato'] text-xs sm:text-sm text-center lg:text-left">
           © 2025 GUPTAS AGENCY. All rights reserved.
         </p>
-        <div className="flex items-center gap-3 sm:gap-4">
+        {/* <div className="flex items-center gap-3 sm:gap-4">
           <a
             href="#"
             className="w-10 h-10 rounded-full border-2 border-[#34a870] flex items-center justify-center hover:bg-[#34a870] hover:text-white transition-all smooth-transition group"
@@ -239,7 +239,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
