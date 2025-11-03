@@ -24,7 +24,7 @@ const destinations = [
     price: "₹2,800",
     image: "/srikalahasti.jpg",
     description:
-      "Famous temple for Rahu-Ketu dosham removal, 36 km from Tirupati",
+      "Famous for Rahu-Ketu dosham removal, 36 km from Tirupati",
     duration: "Half Day",
   },
   {

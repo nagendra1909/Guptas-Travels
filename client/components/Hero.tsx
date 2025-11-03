@@ -185,7 +185,7 @@ export default function Hero() {
         <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-xl border-2 border-[#34a870]/20">
           <h3 className="text-[#1a4d32] font-['Playfair_Display'] text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
             <span className="text-2xl sm:text-3xl">✨</span>
-            Why Choose GUPTAS AGENCY?
+            Why Choose GUPTA TRAVELS?
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">

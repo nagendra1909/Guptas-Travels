@@ -409,7 +409,7 @@ export default function VehicleFleet() {
             <span className="text-3xl flex-shrink-0">🏆</span>
             <div>
               <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold mb-2">
-                GUPTAS AGENCY Premium Guarantee
+                GUPTA TRAVELS Premium Guarantee
               </h4>
               <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed font-['Lato']">
                 Every journey exceeds expectations. Transparent pricing with no hidden charges. Professional drivers dedicated to your comfort. 
@@ -426,7 +426,7 @@ export default function VehicleFleet() {
               Experience Premium Transportation
             </h4>
             <p className="text-[hsl(var(--muted-foreground))] mb-8 font-['Lato'] text-lg">
-              Book your extraordinary journey with GUPTAS AGENCY today
+              Book your extraordinary journey with GUPTA TRAVELS today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
               <a href="tel:+919014486017" className="px-10 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center gap-2 whitespace-nowrap">

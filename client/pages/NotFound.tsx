@@ -8,7 +8,7 @@ const NotFound = () => {
 
   useEffect(() => {
     // Set meta tags for SEO (noindex for 404 pages)
-    document.title = "404 - Page Not Found | GUPTAS AGENCY";
+    document.title = "404 - Page Not Found | GUPTA TRAVELS";
     
     // Add or update noindex meta tag
     let metaRobots = document.querySelector('meta[name="robots"]');
@@ -32,7 +32,7 @@ const NotFound = () => {
       if (metaRobots) {
         metaRobots.setAttribute('content', 'index, follow');
       }
-      document.title = "GUPTAS AGENCY - Your Trusted Travel Partner";
+      document.title = "GUPTA TRAVELS - Your Trusted Travel Partner";
     };
   }, [location.pathname]);
 
