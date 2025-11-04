@@ -18,13 +18,13 @@ const categories = [
     name: "Sri kalahasti",
     description: "Rahu-Ketu temple tours",
     icon: "🕉️",
-    image: "/kalahasti_god.png",
+    image: "/srikalahasti.jpg",
   },
   {
     name: "Kanipakam",
     description: "Vinayaka darshan packages",
     icon: "🐘",
-    image: "/kanipakam_temple.jpg",
+    image: "/kanipakam_vinayaka.jpg",
   },
   {
     name: "Talakona Falls",
