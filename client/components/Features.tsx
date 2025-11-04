@@ -89,10 +89,12 @@ export default function Features() {
             </span>
           </div>
 
-          <h2 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug mb-3 sm:mb-5">
-            Your Trusted Spiritual
+          <h2 className="font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug mb-3 sm:mb-5">
+            <span className="text-[hsl(var(--sacred-saffron))]">
+              Your Trusted Spiritual
+            </span>
             <br />
-            <span className="text-gradient bg-gradient-to-r from-[hsl(var(--sacred-saffron))] via-[hsl(var(--temple-gold))] to-[hsl(var(--kumkum-red))] bg-clip-text text-transparent">
+            <span className="text-[hsl(var(--kumkum-red))]">
               Journey Partner
             </span>
           </h2>
