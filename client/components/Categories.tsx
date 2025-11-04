@@ -101,40 +101,43 @@ export default function Categories() {
               <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[100%] sm:basis-[60%] md:basis-1/2 lg:basis-1/4">
                 <div className="group cursor-pointer h-full">
                   {/* Premium Card Container */}
-                  <div className="relative w-full aspect-video sm:aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-[#e0e0e0] hover:border-[#34a870] bg-gradient-to-br from-white to-[#f9f9f9]">
-                    {/* Background Image with Premium Effects */}
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
-                    />
-                    
-                    {/* Multi-layer Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-[#34a870]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Category Name - On Image */}
-                    {/* <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-2 sm:px-4 text-center">
-                      <h3 className="text-white font-['Playfair_Display'] text-lg sm:text-xl lg:text-2xl font-bold leading-tight drop-shadow-lg">
-                        {category.name}
-                      </h3>
-                    </div> */}
-                    
-                    {/* Description - Bottom Area */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent pt-6 sm:pt-8 pb-3 sm:pb-4 px-3 sm:px-4 transform translate-y-0 sm:translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <p className="text-white text-xs sm:text-base font-['Lato'] font-medium text-center drop-shadow-lg line-clamp-2">
-                        {category.description}
-                      </p>
+                  <div className="flex flex-col gap-4">
+                    {/* Image Container */}
+                    <div className="relative w-full aspect-video sm:aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-[#e0e0e0] hover:border-[#34a870] bg-gradient-to-br from-white to-[#f9f9f9]">
+                      {/* Background Image with Premium Effects */}
+                      <img
+                        src={category.image}
+                        alt={category.name}
+                        className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
+                      />
+                      
+                      {/* Multi-layer Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-[#34a870]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      {/* Description - Bottom Area (on hover) */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent pt-6 sm:pt-8 pb-3 sm:pb-4 px-3 sm:px-4 transform translate-y-0 sm:translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <p className="text-white text-xs sm:text-base font-['Lato'] font-medium text-center drop-shadow-lg line-clamp-2">
+                          {category.description}
+                        </p>
+                      </div>
+                      
+                      {/* Animated Corner Accents */}
+                      <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-bl from-[#34a870]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl"></div>
+                      <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-tr from-[#34a870]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-2xl"></div>
                     </div>
                     
-                    {/* Animated Corner Accents */}
-                    <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-bl from-[#34a870]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl"></div>
-                    <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-tr from-[#34a870]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-2xl"></div>
+                    {/* Category Info - Below Image */}
+                    <div className="flex flex-col gap-3">
+                      <h3 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg sm:text-xl font-bold leading-tight text-center">
+                        {category.name}
+                      </h3>
+                      
+                      {/* Travel Here Button - Below Name */}
+                      <button className="w-full px-4 py-3 sm:py-4 rounded-xl font-['Lato'] font-bold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-1 uppercase tracking-wide">
+                        Travel Here
+                      </button>
+                    </div>
                   </div>
-                  
-                  {/* Travel Here Button - Below Image */}
-                  <button className="w-full px-4 py-3 sm:py-4 rounded-xl font-['Lato'] font-bold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-1 uppercase tracking-wide">
-                    Travel Here
-                  </button>
                 </div>
               </CarouselItem>
             ))}
