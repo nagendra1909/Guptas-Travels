@@ -113,11 +113,11 @@ export default function Categories() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-[#34a870]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Category Name - On Image */}
-                    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-2 sm:px-4 text-center">
+                    {/* <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-2 sm:px-4 text-center">
                       <h3 className="text-white font-['Playfair_Display'] text-lg sm:text-xl lg:text-2xl font-bold leading-tight drop-shadow-lg">
                         {category.name}
                       </h3>
-                    </div>
+                    </div> */}
                     
                     {/* Description - Bottom Area */}
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent pt-6 sm:pt-8 pb-3 sm:pb-4 px-3 sm:px-4 transform translate-y-0 sm:translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
