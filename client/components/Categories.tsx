@@ -42,7 +42,7 @@ const categories = [
     name: "Nagalapuram Falls",
     description: "Trekking & waterfalls",
     icon: "🏞️",
-    image: "/placeholder.svg",
+    image: "/nagalapuramfalls.jpg",
   },
   {
     name: "Sri Venkateswara Zoo",
