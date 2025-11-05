@@ -437,7 +437,7 @@ export default function VehicleFleet() {
                 <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp Us</span>
               </a>
-              <a href="mailto:info@guptasagency.com" className="px-10 py-4 rounded-xl bg-blue-50 border-2 border-blue-200 text-blue-700 font-['Lato'] font-bold text-lg hover:bg-blue-100 transition-all flex items-center gap-2 whitespace-nowrap">
+              <a href="mailto:info@guptaagency.com" className="px-10 py-4 rounded-xl bg-blue-50 border-2 border-blue-200 text-blue-700 font-['Lato'] font-bold text-lg hover:bg-blue-100 transition-all flex items-center gap-2 whitespace-nowrap">
                 <Mail className="w-5 h-5" />
                 <span>Email Inquiry</span>
               </a>

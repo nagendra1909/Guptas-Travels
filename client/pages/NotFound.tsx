@@ -148,7 +148,7 @@ const NotFound = () => {
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-[hsl(var(--border))] shadow-md">
             <Users className="w-6 h-6 text-[hsl(var(--sacred-saffron))]" />
             <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-sm">
-              <span className="font-bold text-[hsl(var(--sacred-saffron))]">GUPTAS Travels</span> - Your trusted pilgrimage partner
+              <span className="font-bold text-[hsl(var(--sacred-saffron))]">gupta Travels</span> - Your trusted pilgrimage partner
             </p>
           </div>
         </div>
