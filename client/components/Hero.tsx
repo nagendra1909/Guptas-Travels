@@ -52,7 +52,7 @@ export default function Hero() {
 
           <h1 className="font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight text-[#1a4d32] mb-3 sm:mb-6 text-center lg:text-left">
             <span className="block mb-1 sm:mb-2">Journey with</span>
-            <span className="text-gradient-green block py-2 sm:py-3">GUPTAS TRAVELS</span>
+            <span className="text-gradient-green block py-2 sm:py-3">GUPTA TRAVELS</span>
             <span className="block text-[#34a870] text-sm sm:text-2xl lg:text-4xl font-light mt-2 sm:mt-3">Where Travel Dreams Come True</span>
           </h1>
           
