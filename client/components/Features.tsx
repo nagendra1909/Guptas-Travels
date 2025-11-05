@@ -17,7 +17,7 @@ export default function Features() {
             {/* Main image with decorative elements */}
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl transform group-hover:scale-[1.02] transition-all duration-500">
               <img
-                src="/placeholder.svg"
+                src="/cover_pic.png"
                 alt="Pilgrims on spiritual journey"
                 width={600}
                 height={700}
