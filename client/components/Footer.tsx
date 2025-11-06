@@ -1,5 +1,5 @@
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -159,14 +159,12 @@ export default function Footer() {
                   info@guptaagency.com
                 </a>
               </li>
-              {/* <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
-                <svg className="w-4 h-4 flex-shrink-0 text-[#34a870]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.2-5.193 5.696-5.193 9.636 0 6.211 5.051 11.276 11.26 11.276h.016c3.331 0 6.531-1.125 9.302-3.256l.335-.214 3.506 1.217-.779-3.524.531-.883a11.242 11.242 0 001.856-6.118c0-6.211-5.053-11.276-11.26-11.276"/>
-                </svg>
-                <a href="https://wa.me/919014486017?text=Hi%20gupta%20AGENCY" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
+                <MessageCircle className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
+                <a href="https://wa.me/919014486017" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   WhatsApp
                 </a>
-              </li> */}
+              </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
                 <MapPin className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
                 <a href="https://www.google.com/maps/search/bus+stand+tirupati+andhra+pradesh/" target="_blank" rel="noopener noreferrer" className="hover:underline">

@@ -157,7 +157,7 @@ export default function BikeRentals() {
             <span>Book Your Bike Now</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </button>
-          <a href="https://wa.me/919014486017?text=Hi%20GUPTAS%20AGENCY" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 backdrop-blur-sm bg-white/50">
+          <a href="https://wa.me/919014486017" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 backdrop-blur-sm bg-white/50">
             <MessageCircle className="w-5 h-5" />
             <span>WhatsApp Inquiry</span>
           </a>
@@ -377,7 +377,7 @@ export default function BikeRentals() {
                 <span>Call: +91 9014486017</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </a>
-              <a href="https://wa.me/919014486017?text=Hi%20GUPTAS%20AGENCY" target="_blank" rel="noopener noreferrer" className="px-10 py-5 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 bg-white shadow-lg">
+              <a href="https://wa.me/919014486017" target="_blank" rel="noopener noreferrer" className="px-10 py-5 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 bg-white shadow-lg">
                 <MessageCircle className="w-6 h-6" />
                 <span>WhatsApp Booking</span>
               </a>
