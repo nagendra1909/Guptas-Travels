@@ -162,20 +162,8 @@ export default function VehicleFleet() {
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
               
-              {/* Tier Badge - Top Left */}
-              <div className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full border border-emerald-200/50 shadow-md">
-                <span className="text-xs font-['Lato'] font-bold text-emerald-700 uppercase tracking-wider">
-                  {vehicle.tier}
-                </span>
-              </div>
-
-              {/* Premium Badge - Top Right */}
-              <div className={`absolute top-4 right-4 z-20 bg-gradient-to-r ${vehicle.accentColor} text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1`}>
-                <span>{vehicle.badge}</span>
-              </div>
-              
-              {/* Capacity Badge - Bottom Left */}
-              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-lg shadow-lg flex items-center gap-1.5 border border-white/50">
+              {/* Capacity Badge */}
+              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-lg shadow-lg flex items-center gap-1.5 border border-white/50">
                 <div>
                   <p className="text-xs text-[hsl(var(--muted-foreground))] font-['Lato']">Capacity</p>
                   <p className="text-[hsl(var(--foreground))] font-bold text-xs font-['Lato']">
