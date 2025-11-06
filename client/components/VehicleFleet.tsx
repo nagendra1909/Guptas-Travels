@@ -391,21 +391,7 @@ export default function VehicleFleet() {
           </div>
         </div>
 
-        {/* Premium Guarantee */}
-        {/* <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-7 border-l-4 border-emerald-600">
-          <div className="flex items-start gap-4">
-            <span className="text-3xl flex-shrink-0">🏆</span>
-            <div>
-              <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold mb-2">
-                GUPTA TRAVELS Premium Guarantee
-              </h4>
-              <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed font-['Lato']">
-                Every journey exceeds expectations. Transparent pricing with no hidden charges. Professional drivers dedicated to your comfort. 
-                <span className="text-emerald-700 font-semibold"> Real-time support available 24/7.</span> We don't just transport—we curate experiences.
-              </p>
-            </div>
-          </div>
-        </div> */}
+      
 
         {/* CTA Section */}
         <div className="mt-12 pt-10 border-t-2 border-emerald-100/50">
