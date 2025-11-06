@@ -271,9 +271,9 @@ export default function VehicleFleet() {
                 >
                   {expandedCard === index ? "Show Less ▲" : "Details ▼"}
                 </button>
-                <button className="flex-1 py-2.5 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-sm hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+                {/* <button className="flex-1 py-2.5 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-sm hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
                   Book Now
-                </button>
+                </button> */}
               </div>
             </div>
 
