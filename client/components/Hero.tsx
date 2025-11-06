@@ -61,7 +61,7 @@ export default function Hero() {
           </p>
 
           {/* Stats - Single line on mobile, centered */}
-          <div className="flex justify-center lg:justify-start items-center gap-2 sm:gap-4 lg:gap-8 mb-6 sm:mb-12 w-full overflow-x-auto">
+          {/* <div className="flex justify-center lg:justify-start items-center gap-2 sm:gap-4 lg:gap-8 mb-6 sm:mb-12 w-full overflow-x-auto">
             <div className="flex items-baseline gap-1 flex-shrink-0">
               <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-[#34a870] font-['Playfair_Display']">
                 10,000+
@@ -88,7 +88,7 @@ export default function Hero() {
                 Vehicles
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
