@@ -16,7 +16,7 @@ export default function Hero() {
             We're available 24/7 to assist you
           </p>
           <p className="text-xs text-[hsl(var(--muted-foreground))]">
-            Talk to our travel experts and book your Tirupati darshan today!
+            Talk to our travel experts and book your Tirupati Trip today!
           </p>
         </div>
       ),

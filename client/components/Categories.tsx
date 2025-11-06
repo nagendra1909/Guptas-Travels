@@ -133,9 +133,9 @@ export default function Categories() {
                       </h3>
                       
                       {/* Travel Here Button - Below Name */}
-                      <button className="w-full px-4 py-3 sm:py-4 rounded-xl font-['Lato'] font-bold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-1 uppercase tracking-wide">
+                      {/* <button className="w-full px-4 py-3 sm:py-4 rounded-xl font-['Lato'] font-bold text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-1 uppercase tracking-wide">
                         Travel Here
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
