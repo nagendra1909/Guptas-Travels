@@ -403,11 +403,11 @@ export default function VehicleFleet() {
               Book your extraordinary journey with GUPTA TRAVELS today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
-              <a href="tel:+919014486017" className="px-10 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center gap-2 whitespace-nowrap">
+              <a href="tel:+919704466557" className="px-10 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center gap-2 whitespace-nowrap">
                 <Phone className="w-5 h-5" />
-                <span>Call: +91 9014486017</span>
+                <span>Call: +91 9704466557</span>
               </a>
-              <a href="https://wa.me/919014486017" target="_blank" rel="noopener noreferrer" className="px-10 py-4 rounded-xl border-2 border-emerald-600 text-emerald-700 font-['Lato'] font-bold text-lg hover:bg-emerald-600 hover:text-white transition-all flex items-center gap-2 whitespace-nowrap">
+              <a href="https://wa.me/919704466557" target="_blank" rel="noopener noreferrer" className="px-10 py-4 rounded-xl border-2 border-emerald-600 text-emerald-700 font-['Lato'] font-bold text-lg hover:bg-emerald-600 hover:text-white transition-all flex items-center gap-2 whitespace-nowrap">
                 <MessageCircle className="w-5 h-5" />
                 <span>WhatsApp Us</span>
               </a>

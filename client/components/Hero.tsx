@@ -10,7 +10,7 @@ export default function Hero() {
       description: (
         <div className="mt-2 space-y-2">
           <p className="font-semibold text-[hsl(var(--sacred-saffron))]">
-            +91 9014486017
+            +91 9704466557
           </p>
           <p className="text-sm">
             We're available 24/7 to assist you
@@ -100,10 +100,10 @@ export default function Hero() {
               onClick={handlePhoneClick}
               className="px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg sm:rounded-xl border-2 border-[#34a870] text-[#34a870] font-['Lato'] font-bold text-sm sm:text-lg hover:bg-[#34a870] hover:text-white smooth-transition flex items-center justify-center gap-2 w-full sm:w-auto"
             >
-              <a href="tel:+919014486017" className="flex items-center gap-2 w-full sm:w-auto justify-center">
+              <a href="tel:+919704466557" className="flex items-center gap-2 w-full sm:w-auto justify-center">
                 <Phone className="w-5 h-5" />
-                <span className="hidden sm:inline">Call: +91 9014486017</span>
-                <span className="sm:hidden">+91 9014486017</span>
+                <span className="hidden sm:inline">Call: +91 9704466557</span>
+                <span className="sm:hidden">+91 9704466557</span>
               </a>
             </button>
           </div>

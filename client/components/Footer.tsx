@@ -31,7 +31,7 @@ export default function Footer() {
       description: (
         <div className="mt-2 space-y-2">
           <p className="font-semibold text-[#34a870]">
-            +91 9014486017
+            +91 9704466557
           </p>
           <p className="text-sm text-[#1a4d32]">
             Call us 24/7 for bookings & assistance
@@ -149,8 +149,8 @@ export default function Footer() {
             <ul className="space-y-4 text-[#4d4d4d] font-['Lato'] text-sm">
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
                 <Phone className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
-                <a href="tel:+919014486017" className="hover:underline">
-                  +91 9014486017
+                <a href="tel:+919704466557" className="hover:underline">
+                  +91 9704466557
                 </a>
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
@@ -161,7 +161,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
                 <MessageCircle className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
-                <a href="https://wa.me/919014486017" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <a href="https://wa.me/919704466557" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   WhatsApp
                 </a>
               </li>
