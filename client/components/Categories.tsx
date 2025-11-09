@@ -60,7 +60,7 @@ const categories = [
     name: "Akasa Ganga",
     description: "Mountain spring trek",
     icon: "⛲",
-    image: "/placeholder.svg",
+    image: "/akasaganga.jpg",
   },
 ];
 

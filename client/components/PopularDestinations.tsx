@@ -56,7 +56,7 @@ const destinations = [
     title: "Srinivasam Mangapuram",
     subtitle: "Ancient Vishnu Temple",
     price: "₹2,000",
-    image: "/placeholder.svg",
+    image: "/srinivasa_mangapuram.jpg",
     description:
       "Lord Venkateswara temple where He got ready for marriage, 12 km away",
     duration: "Half Day",
