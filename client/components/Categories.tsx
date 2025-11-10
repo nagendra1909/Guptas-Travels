@@ -93,6 +93,8 @@ export default function Categories() {
             align: "start",
             loop: true,
             dragFree: true,
+            containScroll: "trimSnaps",
+            
           }}
           className="w-full"
         >
