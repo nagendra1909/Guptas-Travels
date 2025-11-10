@@ -32,7 +32,7 @@ export default function Index() {
           <Categories />
         </section>
         
-        {/* Darshan Packages Section */}
+        {/* Darshanam Packages Section */}
         <section id="packages">
           <PopularDestinations />
         </section>
