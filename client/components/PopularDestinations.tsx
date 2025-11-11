@@ -120,16 +120,20 @@ export default function PopularDestinations() {
             align: "start",
             loop: true,
             dragFree: true,
+            skipSnaps: false,
+            containScroll: "trimSnaps",
+            duration: 30,
+            inViewThreshold: 0.7,
           }}
           className="w-full"
         >
           <CarouselContent className="-ml-2 sm:-ml-4">
             {destinations.map((destination, index) => (
               <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3">
-                <div className="group h-full bg-gradient-to-br from-white to-[#f9f9f9] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-[#e0e0e0] hover:border-[#34a870] relative">
+                <div className="group h-full bg-gradient-to-br from-white to-[#f9f9f9] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] border border-[#e0e0e0] hover:border-[#34a870] relative hover:scale-[1.02] will-change-transform">
                   {/* Featured badge - premium style */}
                   {destination.featured && (
-                    <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white text-[11px] font-bold uppercase tracking-widest shadow-lg">
+                    <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white text-[11px] font-bold uppercase tracking-widest shadow-lg transition-transform duration-300 ease-out group-hover:scale-110">
                       ⭐ Popular
                     </div>
                   )}
@@ -142,12 +146,12 @@ export default function PopularDestinations() {
                       width={724}
                       height={480}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[600ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] will-change-transform"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms] ease-out"></div>
+
                     {/* Duration badge - premium positioning */}
-                    <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg border border-white/50">
+                    <div className="absolute bottom-3 right-3 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg border border-white/50 transition-all duration-300 ease-out group-hover:scale-105 group-hover:shadow-xl">
                       <span className="text-[10px] font-bold text-[#34a870] font-['Lato'] uppercase tracking-wide">
                         ⏱ {destination.duration}
                       </span>
@@ -158,45 +162,45 @@ export default function PopularDestinations() {
                   <div className="p-5 sm:p-6 flex flex-col">
                     {/* Title section */}
                     <div className="mb-3">
-                      <h3 className="text-[#1a4d32] font-['Playfair_Display'] text-lg sm:text-xl font-bold mb-1 leading-tight group-hover:text-[#34a870] transition-colors">
+                      <h3 className="text-[#1a4d32] font-['Playfair_Display'] text-lg sm:text-xl font-bold mb-1 leading-tight group-hover:text-[#34a870] transition-colors duration-300 ease-out">
                         {destination.title}
                       </h3>
-                      <p className="text-[#34a870] font-['Lato'] text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                      <p className="text-[#34a870] font-['Lato'] text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 ease-out group-hover:tracking-widest">
                         {destination.subtitle}
                       </p>
                     </div>
 
                     {/* Description */}
-                    <p className="text-[#666666] font-['Lato'] text-sm leading-relaxed mb-4 line-clamp-2">
+                    <p className="text-[#666666] font-['Lato'] text-sm leading-relaxed mb-4 line-clamp-2 transition-colors duration-300 ease-out group-hover:text-[#555555]">
                       {destination.description}
                     </p>
 
                     {/* Highlights/Benefits */}
                     <div className="mb-4 space-y-2">
-                      <div className="flex items-center gap-2 text-xs">
-                        <span className="text-[#34a870]">✓</span>
+                      <div className="flex items-center gap-2 text-xs transition-transform duration-300 ease-out group-hover:translate-x-1">
+                        <span className="text-[#34a870] transition-transform duration-300 ease-out group-hover:scale-125">✓</span>
                         <span className="text-[#555555] font-['Lato']">Guided tours included</span>
                       </div>
-                      <div className="flex items-center gap-2 text-xs">
-                        <span className="text-[#34a870]">✓</span>
+                      <div className="flex items-center gap-2 text-xs transition-transform duration-300 ease-out group-hover:translate-x-1" style={{ transitionDelay: '50ms' }}>
+                        <span className="text-[#34a870] transition-transform duration-300 ease-out group-hover:scale-125">✓</span>
                         <span className="text-[#555555] font-['Lato']">Comfortable transportation</span>
                       </div>
                     </div>
 
                     {/* Divider */}
-                    <div className="w-full h-px bg-gradient-to-r from-[#34a870]/20 via-[#34a870] to-[#34a870]/20 rounded-full mb-4"></div>
+                    <div className="w-full h-px bg-gradient-to-r from-[#34a870]/20 via-[#34a870] to-[#34a870]/20 rounded-full mb-4 transition-all duration-500 ease-out group-hover:via-[#5dbd7f]"></div>
 
                     {/* Price and CTA */}
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <span className="text-[#34a870] font-['Playfair_Display'] text-2xl sm:text-3xl font-bold">
+                        <span className="text-[#34a870] font-['Playfair_Display'] text-2xl sm:text-3xl font-bold transition-all duration-300 ease-out group-hover:scale-105 inline-block">
                           {destination.price}
                         </span>
                         <span className="text-[#999999] font-['Lato'] text-xs ml-1">/person</span>
                       </div>
-                      <button 
+                      <button
                         onClick={() => handleBooking(destination.title, destination.price)}
-                        className="px-5 py-2.5 rounded-xl font-['Lato'] font-bold text-sm transition-all duration-300 bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-0.5 uppercase tracking-wide"
+                        className="px-5 py-2.5 rounded-xl font-['Lato'] font-bold text-sm transition-all duration-[350ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white hover:shadow-lg hover:shadow-[#34a870]/40 hover:-translate-y-1 hover:scale-105 uppercase tracking-wide active:scale-95 active:translate-y-0"
                       >
                         Explore
                       </button>
@@ -204,16 +208,16 @@ export default function PopularDestinations() {
 
                     {/* Premium features row - compact */}
                     <div className="flex items-center justify-between pt-3 border-t border-[#e8e8e8]">
-                      <div className="flex items-center gap-1.5 text-[#34a870]">
-                        <Car className="w-4 h-4" />
+                      <div className="flex items-center gap-1.5 text-[#34a870] transition-all duration-300 ease-out group-hover:scale-105">
+                        <Car className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-3" />
                         <span className="text-xs font-['Lato'] font-medium">Transfer</span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-[#34a870]">
-                        <Users className="w-4 h-4" />
+                      <div className="flex items-center gap-1.5 text-[#34a870] transition-all duration-300 ease-out group-hover:scale-105" style={{ transitionDelay: '50ms' }}>
+                        <Users className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-3" />
                         <span className="text-xs font-['Lato'] font-medium">Guide</span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-[#34a870]">
-                        <Users className="w-4 h-4" />
+                      <div className="flex items-center gap-1.5 text-[#34a870] transition-all duration-300 ease-out group-hover:scale-105" style={{ transitionDelay: '100ms' }}>
+                        <Users className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-3" />
                         <span className="text-xs font-['Lato'] font-medium">Darshan</span>
                       </div>
                     </div>
@@ -222,10 +226,10 @@ export default function PopularDestinations() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          
+
           {/* Premium carousel controls */}
-          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl" />
-          <CarouselNext className="right-0 sm:-right-6 lg:-right-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl" />
+          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-[350ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" />
+          <CarouselNext className="right-0 sm:-right-6 lg:-right-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-[350ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" />
         </Carousel>
         
         {/* Mobile swipe indicator - premium style */}

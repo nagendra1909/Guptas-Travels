@@ -53,13 +53,13 @@ export default function Footer() {
             <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
               <img
                 src="/gupta_logo_text.png"
-                alt="GUPTA TRAVELS"
+                alt="guptha TRAVELS"
                 className="w-full h-full object-contain"
               />
             </div>
             <div>
               <span className="text-[#1a4d32] font-['Playfair_Display'] text-lg sm:text-xl font-bold block leading-tight">
-                GUPTA TRAVELS
+                guptha TRAVELS
               </span>
               <span className="text-[#34a870] text-[10px] sm:text-xs font-['Lato'] tracking-wider font-medium">
                 YOUR JOURNEY PARTNER
@@ -155,8 +155,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
                 <Mail className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
-                <a href="mailto:info@guptaagency.com" className="hover:underline">
-                  info@guptaagency.com
+                <a href="mailto:info@gupthaagency.com" className="hover:underline">
+                  info@gupthaagency.com
                 </a>
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
@@ -181,7 +181,7 @@ export default function Footer() {
 
       <div className="border-t-2 border-[#34a870]/20 pt-6 sm:pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6">
         <p className="text-[#666666] font-['Lato'] text-xs sm:text-sm text-center lg:text-left">
-          © 2025 gupta AGENCY. All rights reserved.
+          © 2025 guptha AGENCY. All rights reserved.
         </p>
         <div className="flex items-center gap-3 sm:gap-4">
           <a

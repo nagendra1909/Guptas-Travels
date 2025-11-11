@@ -184,4 +184,40 @@
     border-color: #34a870;
     box-shadow: 0 0 15px rgba(52, 168, 112, 0.15);
   }
+
+  /* 3D Perspective utilities for card tilt effect */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  /* Premium easing curves for GUPTA TRAVELS brand */
+  .ease-premium {
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .ease-premium-out {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ease-premium-in-out {
+    transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+  }
+
+  /* Smooth spring animation */
+  .spring-bounce {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Performance optimizations for 60fps animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Carousel smooth scrolling */
+  .carousel-smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 }
