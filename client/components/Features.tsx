@@ -4,12 +4,12 @@ export default function Features() {
   return (
     <section className="w-full px-4 sm:px-8 lg:px-24 py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-[hsl(var(--background))] via-white to-[hsl(var(--sacred-saffron))/3] relative overflow-hidden">
       {/* Top Wave Divider */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+      {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg className="relative block w-full h-10 sm:h-14" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
                 className="fill-[hsl(var(--sacred-saffron))]/5"></path>
         </svg>
-      </div>
+      </div> */}
 
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] bg-gradient-to-br from-[hsl(var(--sacred-saffron))/8] to-transparent rounded-full blur-3xl -z-10"></div>

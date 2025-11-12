@@ -244,7 +244,7 @@ function EnhancedDestinationCard({
   );
 }
 
-// Destination Details Modal
+// Destination Details Modal - Landscape Layout
 function DestinationModal({
   category,
   isOpen,
@@ -264,141 +264,179 @@ function DestinationModal({
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/70 backdrop-blur-md z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
 
-          {/* Modal */}
+          {/* Modal - Landscape Layout */}
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            initial={{ opacity: 0, scale: 0.9 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            exit={{ opacity: 0, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
-            <div className="relative bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            <div className="relative bg-white rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center hover:bg-white transition-colors"
+                className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-white shadow-xl flex items-center justify-center hover:bg-gray-50 transition-all hover:scale-110 active:scale-95 group"
               >
-                <X className="w-5 h-5 text-gray-700" />
+                <X className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors" />
               </button>
 
-              {/* Hero Image Section */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              {/* Landscape Grid Layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 flex-1 min-h-0">
+                {/* LEFT SIDE - Image */}
+                <div className="relative h-64 lg:h-auto overflow-hidden bg-gradient-to-br from-emerald-50 to-teal-50">
+                  <motion.img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
 
-                {/* Icon Badge */}
-                {/* <div className="absolute top-6 left-6 w-16 h-16 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl flex items-center justify-center text-4xl">
-                  {category.icon}
-                </div> */}
-
-                {/* Rating */}
-                <div className="absolute top-6 left-6 px-4 py-2 rounded-full bg-emerald-500/95 backdrop-blur-md shadow-lg flex items-center gap-2">
-                  <Star className="w-4 h-4 fill-white text-white" />
-                  <span className="text-white font-bold">{category.rating}</span>
-                </div>
-
-                {/* Title */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h2 className="text-white font-['Playfair_Display'] text-3xl sm:text-4xl font-bold mb-2">
-                    {category.name}
-                  </h2>
-                  <p className="text-white/90 font-['Lato'] text-lg">
-                    {category.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div className="p-8 overflow-y-auto max-h-[calc(90vh-16rem)]">
-                {/* Info Cards */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-emerald-50 to-emerald-100/50 border border-emerald-200">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 rounded-lg bg-emerald-500">
-                        <Clock className="w-5 h-5 text-white" />
-                      </div>
-                      <p className="text-sm text-gray-600 font-['Lato']">Duration</p>
-                    </div>
-                    <p className="text-lg font-bold text-gray-900 font-['Lato']">{category.duration}</p>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 rounded-lg bg-blue-500">
-                        <MapPin className="w-5 h-5 text-white" />
-                      </div>
-                      <p className="text-sm text-gray-600 font-['Lato']">Popularity</p>
-                    </div>
-                    <p className="text-lg font-bold text-gray-900 font-['Lato']">{category.visitors}</p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 font-['Playfair_Display'] mb-3">
-                    About This Destination
-                  </h3>
-                  <p className="text-gray-600 font-['Lato'] leading-relaxed">
-                    Experience the divine beauty and spiritual essence of {category.name}.
-                    This sacred destination offers a perfect blend of devotion, natural beauty,
-                    and cultural heritage. Whether you're seeking spiritual enlightenment or
-                    exploring the rich history of the region, this journey promises unforgettable moments.
-                  </p>
-                </div>
-
-                {/* Highlights */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 font-['Playfair_Display'] mb-3">
-                    Highlights
-                  </h3>
-                  <div className="space-y-2">
-                    {['Sacred temple darshan', 'Guided tour with expert', 'Comfortable transportation', 'Refreshments included'].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                        <p className="text-gray-700 font-['Lato']">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <motion.button
-                    onClick={onContactClick}
-                    className="flex-1 px-6 py-4 rounded-xl font-['Lato'] font-bold bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg relative overflow-hidden group"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  {/* Rating Badge - Top Left */}
+                  <motion.div
+                    className="absolute top-6 left-6 px-4 py-2.5 rounded-full bg-emerald-500 shadow-2xl flex items-center gap-2"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
                   >
+                    <Star className="w-5 h-5 fill-white text-white" />
+                    <span className="text-white font-bold text-lg">{category.rating}</span>
+                  </motion.div>
+
+                  {/* Title Overlay - Bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
-                      animate={{ x: ["-100%", "100%"] }}
-                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                    />
-                    <span className="relative flex items-center justify-center gap-2">
-                      <Phone className="w-5 h-5" />
-                      Contact Us
-                    </span>
-                  </motion.button>
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <h2 className="text-white font-['Playfair_Display'] text-3xl lg:text-4xl font-bold mb-2 drop-shadow-lg">
+                        {category.name}
+                      </h2>
+                      <p className="text-white/95 font-['Lato'] text-base lg:text-lg drop-shadow-md">
+                        {category.description}
+                      </p>
+                    </motion.div>
+                  </div>
 
-                  <motion.button
-                    onClick={onClose}
-                    className="flex-1 px-6 py-4 rounded-xl font-['Lato'] font-bold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  {/* Decorative Corner Element */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald-400/20 to-transparent" />
+                </div>
+
+                {/* RIGHT SIDE - Details */}
+                <div className="overflow-y-auto p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-white to-gray-50 flex flex-col min-h-0 space-y-6">
+                  {/* Info Cards */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <motion.div
+                      className="p-5 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg hover:shadow-xl transition-shadow"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <Clock className="w-6 h-6" />
+                        <p className="text-sm font-semibold font-['Lato'] opacity-90">Duration</p>
+                      </div>
+                      <p className="text-2xl font-bold font-['Lato']">{category.duration}</p>
+                    </motion.div>
+
+                    <motion.div
+                      className="p-5 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl transition-shadow"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <Users className="w-6 h-6" />
+                        <p className="text-sm font-semibold font-['Lato'] opacity-90">Visitors</p>
+                      </div>
+                      <p className="text-2xl font-bold font-['Lato']">{category.visitors}</p>
+                    </motion.div>
+                  </div>
+
+                  {/* Description */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
                   >
-                    Close
-                  </motion.button>
+                    <h3 className="text-2xl font-bold text-gray-900 font-['Playfair_Display'] mb-4 flex items-center gap-2">
+                      <div className="w-1 h-8 bg-gradient-to-b from-emerald-500 to-emerald-600 rounded-full" />
+                      About This Destination
+                    </h3>
+                    <p className="text-gray-700 font-['Lato'] leading-relaxed text-base">
+                      Experience the divine beauty and spiritual essence of {category.name}.
+                      This sacred destination offers a perfect blend of devotion, natural beauty,
+                      and cultural heritage. Whether you're seeking spiritual enlightenment or
+                      exploring the rich history of the region, this journey promises unforgettable moments.
+                    </p>
+                  </motion.div>
+
+                  {/* Highlights */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <h3 className="text-xl font-bold text-gray-900 font-['Playfair_Display'] mb-4 flex items-center gap-2">
+                      <Sparkles className="w-6 h-6 text-emerald-500" />
+                      Tour Highlights
+                    </h3>
+                    <div className="space-y-3">
+                      {['Sacred temple darshan', 'Expert guided tour', 'Comfortable AC transportation', 'Complimentary refreshments'].map((item, idx) => (
+                        <motion.div
+                          key={idx}
+                          className="flex items-center gap-4 p-3 rounded-xl bg-white border border-emerald-100 hover:border-emerald-300 transition-colors"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.6 + idx * 0.1 }}
+                        >
+                          <div className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+                          <p className="text-gray-800 font-['Lato'] font-medium">{item}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Action Buttons - Prominent CTA */}
+                  <motion.div
+                    className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200 mt-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8 }}
+                  >
+                    {/* Primary CTA - Contact Us Button */}
+                    <motion.button
+                      onClick={onContactClick}
+                      className="flex-1 px-6 py-3 rounded-xl font-['Lato'] font-semibold text-base bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg relative overflow-hidden group"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {/* Animated Shimmer */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+                        animate={{ x: ["-100%", "200%"] }}
+                        transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                      />
+                      
+                      <span className="relative flex items-center justify-center gap-2">
+                        <Phone className="w-5 h-5" />
+                        Contact Us
+                      </span>
+                    </motion.button>
+                  </motion.div>
                 </div>
               </div>
             </div>

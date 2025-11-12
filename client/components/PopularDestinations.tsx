@@ -7,6 +7,9 @@ import {
 } from "@/components/ui/carousel";
 import { useToast } from "@/hooks/use-toast";
 import { Car, Users, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 const destinations = [
   {
@@ -74,6 +77,16 @@ const destinations = [
 export default function PopularDestinations() {
   const { toast } = useToast();
 
+  // Auto-scroll plugin
+  const autoplayPlugin = useRef(
+    Autoplay({ 
+      delay: 2000, 
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: true,
+    })
+  );
+
   const handleBooking = (destinationTitle: string, price: string) => {
     toast({
       title: "🙏 Booking Request Received!",
@@ -93,50 +106,128 @@ export default function PopularDestinations() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-8 lg:px-24 py-12 sm:py-20 bg-[hsl(var(--background))]">
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-12 gap-4 sm:gap-6 px-2 sm:px-0">
-        <div>
-          <div className="inline-block px-4 py-2 rounded-full bg-[hsl(var(--sacred-saffron))/10] mb-4">
+    <section className="w-full px-4 sm:px-8 lg:px-24 py-12 sm:py-20 bg-[hsl(var(--background))] relative overflow-hidden">
+      {/* Top Wave Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg className="relative block w-full h-12 sm:h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                className="fill-white/50"></path>
+        </svg>
+      </div>
+
+      {/* Animated Background Elements */}
+      <motion.div
+        className="absolute top-10 right-10 w-64 h-64 bg-[hsl(var(--sacred-saffron))]/10 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-10 w-72 h-72 bg-[hsl(var(--kumkum-red))]/10 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 3,
+        }}
+      />
+
+      {/* Decorative Stroke Patterns */}
+      <div className="absolute top-20 left-5 w-20 h-20 opacity-10">
+        <svg viewBox="0 0 100 100" className="text-[hsl(var(--sacred-saffron))]">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+          <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3,3" />
+        </svg>
+      </div>
+      <div className="absolute bottom-32 right-10 w-24 h-24 opacity-10">
+        <svg viewBox="0 0 100 100" className="text-[hsl(var(--kumkum-red))]">
+          <path d="M10,50 Q30,10 50,50 T90,50" fill="none" stroke="currentColor" strokeWidth="2" />
+          <path d="M10,60 Q30,20 50,60 T90,60" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      </div>
+
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-12 gap-4 sm:gap-6 px-2 sm:px-0 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="inline-block px-4 py-2 rounded-full bg-[hsl(var(--sacred-saffron))/10] mb-4 border border-[hsl(var(--sacred-saffron))/20]"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
             <span className="text-[hsl(var(--sacred-saffron))] font-['Lato'] font-semibold text-sm tracking-wide">
               SACRED DESTINATIONS
             </span>
-          </div>
+          </motion.div>
           <h2 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
             Tirupati Region
             <br />
-            <span className="bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] bg-clip-text text-transparent">
-              Sacred Destinations
-            </span>
           </h2>
+          {/* Decorative line with dots */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 h-2 rounded-full bg-[hsl(var(--sacred-saffron))]"></div>
+            <div className="h-0.5 w-16 bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))]"></div>
+            <div className="w-2 h-2 rounded-full bg-[hsl(var(--kumkum-red))]"></div>
+          </div>
           <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-sm sm:text-base max-w-xl">
             Explore divine temples, historic forts, and scenic waterfalls in and around Tirupati
           </p>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="relative px-2 sm:px-0">
+      <div className="relative z-10">
         <Carousel
+          plugins={[autoplayPlugin.current]}
           opts={{
             align: "start",
             loop: true,
-            dragFree: true,
+            dragFree: false,
             skipSnaps: false,
             containScroll: "trimSnaps",
             duration: 30,
             inViewThreshold: 0.7,
           }}
-          className="w-full"
+          className="w-full px-2 sm:px-0"
+          onMouseEnter={() => autoplayPlugin.current.stop()}
+          onMouseLeave={() => autoplayPlugin.current.play()}
         >
           <CarouselContent className="-ml-2 sm:-ml-4">
             {destinations.map((destination, index) => (
               <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3">
-                <div className="group h-full bg-gradient-to-br from-white to-[#f9f9f9] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] border border-[#e0e0e0] hover:border-[#34a870] relative hover:scale-[1.02] will-change-transform">
+                <motion.div 
+                  className="group h-full bg-gradient-to-br from-white to-[#f9f9f9] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-[400ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] border border-[#e0e0e0] hover:border-[#34a870] relative hover:scale-[1.02] will-change-transform"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.1,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                >
                   {/* Featured badge - premium style */}
                   {destination.featured && (
                     <div className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#34a870] to-[#5dbd7f] text-white text-[11px] font-bold uppercase tracking-widest shadow-lg transition-transform duration-300 ease-out group-hover:scale-110">
                       ⭐ Popular
                     </div>
                   )}
+
+                  {/* Decorative corner strokes */}
+                  <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Image - premium styling with overlay */}
                   <div className="relative h-56 sm:h-64 overflow-hidden">
@@ -222,24 +313,64 @@ export default function PopularDestinations() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>
 
-          {/* Premium carousel controls */}
-          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-[350ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" />
-          <CarouselNext className="right-0 sm:-right-6 lg:-right-8 w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#34a870] bg-white text-[#34a870] hover:bg-[#34a870] hover:text-white transition-all duration-[350ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" />
+          {/* Enhanced Premium carousel controls with gradient - Left and Right Navigation Buttons */}
+          <CarouselPrevious className="-left-4 sm:-left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-[#34a870] bg-white/95 backdrop-blur-sm text-[#34a870] hover:bg-gradient-to-br hover:from-[#34a870] hover:to-[#2d9660] hover:text-white transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-lg hover:shadow-[#34a870]/50 hover:shadow-xl hover:scale-110 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 z-20" />
+          <CarouselNext className="-right-4 sm:-right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-[#34a870] bg-white/95 backdrop-blur-sm text-[#34a870] hover:bg-gradient-to-br hover:from-[#34a870] hover:to-[#2d9660] hover:text-white transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-lg hover:shadow-[#34a870]/50 hover:shadow-xl hover:scale-110 active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 z-20" />
         </Carousel>
         
-        {/* Mobile swipe indicator - premium style */}
-        <div className="flex sm:hidden justify-center mt-8">
-          <div className="text-[#34a870] text-xs font-['Lato'] flex items-center gap-3 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#f0f9f6] to-white border-2 border-[#34a870]/30 font-semibold uppercase tracking-wider">
-            <ArrowRight className="w-4 h-4 animate-bounce -scale-x-100" />
-            <span>Swipe for More</span>
-            <ArrowRight className="w-4 h-4 animate-bounce" />
+        {/* Enhanced Mobile swipe indicator with auto-play status */}
+        <motion.div 
+          className="flex sm:hidden justify-center mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="relative">
+            <motion.div 
+              className="absolute inset-0 bg-[#34a870] blur-lg"
+              animate={{ 
+                opacity: [0.15, 0.3, 0.15],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <div className="relative text-[#34a870] text-xs font-['Lato'] flex items-center gap-3 px-5 py-3 rounded-full bg-white/95 backdrop-blur-md border-2 border-[#34a870]/30 font-semibold shadow-lg">
+              <motion.div
+                animate={{ x: [-3, 0, -3] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowRight className="w-4 h-4 -scale-x-100" />
+              </motion.div>
+              <span className="bg-gradient-to-r from-[#34a870] to-[#2d9660] bg-clip-text text-transparent uppercase tracking-wider">
+                Auto-playing • Swipe
+              </span>
+              <motion.div
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowRight className="w-4 h-4" />
+              </motion.div>
+            </div>
           </div>
-        </div>
+        </motion.div>
+      </div>
+
+      {/* Bottom Wave Divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+        <svg className="relative block w-full h-12 sm:h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                className="fill-white/30"></path>
+        </svg>
       </div>
     </section>
   );
