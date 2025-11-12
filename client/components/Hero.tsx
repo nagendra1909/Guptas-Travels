@@ -1,12 +1,38 @@
 import { useToast } from "@/hooks/use-toast";
-import { Phone, ArrowRight, Sparkles, Star, MapPin, Users, Award, Clock, Heart } from "lucide-react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { Phone, ArrowRight, Sparkles, Star, MapPin, Users, Award, Clock, Heart, X, Mail, User, Calendar, Loader2 } from "lucide-react";
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '@/lib/emailjs-config';
 
 export default function Hero() {
   const { toast } = useToast();
   const containerRef = useRef<HTMLElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    destination: '',
+    date: '',
+    guests: '',
+    message: ''
+  });
+
+  // Destinations list
+  const destinations = [
+    "Tirupati Temples",
+    "Sri Kalahasti",
+    "Kanipakam",
+    "Talakona Falls",
+    "Chandragiri Fort",
+    "Nagalapuram Falls",
+    "Sri Venkateswara Zoo",
+    "Papavinasanam",
+    "Akasa Ganga"
+  ];
 
   // Smooth scroll progress tracking
   const { scrollYProgress } = useScroll({
@@ -49,6 +75,77 @@ export default function Hero() {
       ),
       duration: 5000,
     });
+  };
+
+  const handleBookingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.destination) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields (Name, Email, Phone, Destination)",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Prepare email template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        travel_date: formData.date || 'Not specified',
+        guests: formData.guests || 'Not specified',
+        destination: formData.destination,
+        message: formData.message || 'No special requirements',
+        to_email: 'admin@guptatravels.com',
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "✅ Booking Request Sent!",
+          description: "Thank you! We will contact you soon to confirm your journey.",
+          className: "bg-emerald-50 border-emerald-500",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          destination: '',
+          date: '',
+          guests: '',
+          message: ''
+        });
+
+        // Close modal after short delay
+        setTimeout(() => {
+          setShowBookingForm(false);
+        }, 1500);
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "❌ Sending Failed",
+        description: "Unable to send your request. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -297,6 +394,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
                 <motion.button
+                  onClick={() => setShowBookingForm(true)}
                   className="relative group px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-['Lato'] font-bold text-lg shadow-2xl overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -327,7 +425,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Trust Indicators */}
-              <motion.div
+              {/* <motion.div
                 className="flex items-center gap-6 pt-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -350,7 +448,7 @@ export default function Hero() {
                     4.9/5.0 (2.5k+ reviews)
                   </span>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
 
             {/* Right Column - Interactive Card */}
@@ -533,7 +631,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -559,6 +657,220 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Booking Form Modal */}
+      <AnimatePresence>
+        {showBookingForm && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 bg-black/70 backdrop-blur-md z-[60]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowBookingForm(false)}
+            />
+
+            {/* Slide-in Panel */}
+            <motion.div
+              className="fixed top-0 right-0 h-full w-full sm:w-[550px] bg-white shadow-2xl z-[60] overflow-y-auto"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            >
+              {/* Header */}
+              <div className="sticky top-0 bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white z-10">
+                <button
+                  onClick={() => setShowBookingForm(false)}
+                  className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition-colors flex items-center justify-center"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-lg bg-white/20">
+                    <Sparkles className="w-6 h-6" />
+                  </div>
+                  <h2 className="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold">
+                    Book Your Journey
+                  </h2>
+                </div>
+                <p className="font-['Lato'] text-emerald-50 ml-14">
+                  Fill in your details and we'll contact you shortly
+                </p>
+              </div>
+
+              {/* Form Content */}
+              <form onSubmit={handleBookingSubmit} className="p-6 space-y-5">
+                {/* Name Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                    Full Name *
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato']"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                </div>
+
+                {/* Email Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                    Email Address *
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato']"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                    Phone Number *
+                  </label>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato']"
+                      placeholder="+91 xxxxx xxxxx"
+                    />
+                  </div>
+                </div>
+
+                {/* Destination Dropdown */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                    Choose Destination *
+                  </label>
+                  <div className="relative">
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 z-10" />
+                    <select
+                      required
+                      value={formData.destination}
+                      onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
+                      className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato'] appearance-none bg-white cursor-pointer"
+                    >
+                      <option value="">Select your destination</option>
+                      {destinations.map((dest) => (
+                        <option key={dest} value={dest}>
+                          {dest}
+                        </option>
+                      ))}
+                    </select>
+                    <ArrowRight className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 rotate-90 pointer-events-none" />
+                  </div>
+                </div>
+
+                {/* Date & Guests Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                      Travel Date
+                    </label>
+                    <div className="relative">
+                      <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type="date"
+                        value={formData.date}
+                        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                        className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato'] text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                      Guests
+                    </label>
+                    <div className="relative">
+                      <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type="number"
+                        min="1"
+                        value={formData.guests}
+                        onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
+                        className="w-full pl-11 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato']"
+                        placeholder="2"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message Textarea */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 font-['Lato'] mb-2">
+                    Special Requirements
+                  </label>
+                  <textarea
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none font-['Lato'] resize-none"
+                    placeholder="Any special requests or questions..."
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full px-6 py-4 rounded-xl font-['Lato'] font-bold bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg relative overflow-hidden ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
+                  whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                >
+                  {!isSubmitting && (
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                    />
+                  )}
+                  <span className="relative flex items-center justify-center gap-2">
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending Request...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="w-5 h-5" />
+                        Confirm Booking Request
+                      </>
+                    )}
+                  </span>
+                </motion.button>
+
+                {/* Info Text */}
+                <p className="text-center text-sm text-gray-500 font-['Lato']">
+                  We'll contact you within 24 hours to confirm your booking
+                </p>
+              </form>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </section>
   );
