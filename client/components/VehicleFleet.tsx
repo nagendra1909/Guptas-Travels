@@ -166,7 +166,7 @@ export default function VehicleFleet() {
           />
         </div>
         <div
-          className="absolute top-3/4 translate-x-1/2"
+          className="absolute top-1/4 translate-x-1/2"
           style={{
             animation: "car-move 8s linear infinite reverse",
           }}

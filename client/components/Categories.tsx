@@ -7,10 +7,11 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowRight, MapPin, Clock, Star, ChevronRight, Sparkles, X, Phone, Mail, User, Calendar, Users, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from '@/lib/emailjs-config';
 import { useToast } from "@/hooks/use-toast";
+import Autoplay from "embla-carousel-autoplay";
 
 const categories = [
   {
@@ -97,12 +98,12 @@ const categories = [
 ];
 
 // Enhanced Card Component
-function EnhancedDestinationCard({ 
-  category, 
+function EnhancedDestinationCard({
+  category,
   index,
   onExplore
-}: { 
-  category: typeof categories[0]; 
+}: {
+  category: typeof categories[0];
   index: number;
   onExplore: (category: typeof categories[0]) => void;
 }) {
@@ -112,8 +113,8 @@ function EnhancedDestinationCard({
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ 
-        duration: 0.5, 
+      transition={{
+        duration: 0.5,
         delay: index * 0.1,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
@@ -244,12 +245,12 @@ function EnhancedDestinationCard({
 }
 
 // Destination Details Modal
-function DestinationModal({ 
-  category, 
-  isOpen, 
+function DestinationModal({
+  category,
+  isOpen,
   onClose,
-  onContactClick 
-}: { 
+  onContactClick
+}: {
   category: typeof categories[0] | null;
   isOpen: boolean;
   onClose: () => void;
@@ -295,7 +296,7 @@ function DestinationModal({
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                
+
                 {/* Icon Badge */}
                 {/* <div className="absolute top-6 left-6 w-16 h-16 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl flex items-center justify-center text-4xl">
                   {category.icon}
@@ -349,9 +350,9 @@ function DestinationModal({
                     About This Destination
                   </h3>
                   <p className="text-gray-600 font-['Lato'] leading-relaxed">
-                    Experience the divine beauty and spiritual essence of {category.name}. 
-                    This sacred destination offers a perfect blend of devotion, natural beauty, 
-                    and cultural heritage. Whether you're seeking spiritual enlightenment or 
+                    Experience the divine beauty and spiritual essence of {category.name}.
+                    This sacred destination offers a perfect blend of devotion, natural beauty,
+                    and cultural heritage. Whether you're seeking spiritual enlightenment or
                     exploring the rich history of the region, this journey promises unforgettable moments.
                   </p>
                 </div>
@@ -409,11 +410,11 @@ function DestinationModal({
 }
 
 // Contact Form Modal (Slides from Right)
-function ContactFormModal({ 
-  isOpen, 
+function ContactFormModal({
+  isOpen,
   onClose,
   category
-}: { 
+}: {
   isOpen: boolean;
   onClose: () => void;
   category: typeof categories[0] | null;
@@ -431,7 +432,7 @@ function ContactFormModal({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate required fields
     if (!formData.name || !formData.email || !formData.phone) {
       toast({
@@ -529,7 +530,7 @@ function ContactFormModal({
               >
                 <X className="w-5 h-5" />
               </button>
-              
+
               <h2 className="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold mb-2">
                 Book Your Journey
               </h2>
@@ -647,9 +648,8 @@ function ContactFormModal({
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full px-6 py-4 rounded-xl font-['Lato'] font-bold bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg relative overflow-hidden ${
-                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                }`}
+                className={`w-full px-6 py-4 rounded-xl font-['Lato'] font-bold bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg relative overflow-hidden ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
                 whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                 whileTap={!isSubmitting ? { scale: 0.98 } : {}}
               >
@@ -692,6 +692,16 @@ export default function Categories() {
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
 
+  // Auto-scroll plugin with emerald theme
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 2000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: true,
+    })
+  );
+
   const handleExplore = (category: typeof categories[0]) => {
     setSelectedDestination(category);
     setShowDetailsModal(true);
@@ -712,12 +722,57 @@ export default function Categories() {
   };
   return (
     <section className="w-full px-4 sm:px-8 lg:px-24 py-16 sm:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl opacity-50" />
+      {/* Top Wave Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg className="relative block w-full h-16 sm:h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                className="fill-emerald-500/10"></path>
+        </svg>
+      </div>
+
+      {/* Background Decorative Elements - Enhanced with animation */}
+      <motion.div
+        className="absolute top-20 left-10 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "circInOut"
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      />
+
+      {/* Decorative Stroke Elements */}
+      <div className="absolute top-40 right-20 w-32 h-32 opacity-10">
+        <svg viewBox="0 0 100 100" className="text-emerald-500">
+          <path d="M20,50 L40,30 L60,50 L80,30" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20,70 L40,50 L60,70 L80,50" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="absolute bottom-40 left-16 w-28 h-28 opacity-10">
+        <svg viewBox="0 0 100 100" className="text-teal-500">
+          <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="8,4" rx="10" />
+          <rect x="30" y="30" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6,3" rx="8" />
+        </svg>
+      </div>
 
       {/* Enhanced Header Section */}
-      <motion.div 
+      <motion.div
         className="max-w-4xl mx-auto text-center mb-16 relative z-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -725,7 +780,7 @@ export default function Categories() {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         {/* Animated Badge */}
-        <motion.div 
+        <motion.div
           className="inline-block mb-6"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -744,7 +799,7 @@ export default function Categories() {
         </motion.div>
 
         {/* Main Title */}
-        <motion.h2 
+        <motion.h2
           className="text-4xl sm:text-5xl lg:text-6xl font-bold font-['Playfair_Display'] mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -758,29 +813,45 @@ export default function Categories() {
         </motion.h2>
 
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           className="text-lg text-gray-600 font-['Lato'] max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Embark on spiritual journeys, witness breathtaking waterfalls, and explore historical wonders 
+          Embark on spiritual journeys, witness breathtaking waterfalls, and explore historical wonders
           in the sacred region of Tirupati
         </motion.p>
 
-        {/* Decorative Line */}
-        <motion.div
-          className="mt-8 h-1 w-24 mx-auto bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-500 rounded-full"
-          initial={{ width: 0, opacity: 0 }}
-          whileInView={{ width: 96, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        />
+        {/* Decorative Line with Dots */}
+        <div className="mt-8 flex items-center justify-center gap-2">
+          <motion.div
+            className="w-2 h-2 rounded-full bg-emerald-400"
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+          />
+          <motion.div
+            className="h-1 w-24 bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-500 rounded-full"
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: 96, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          />
+          <motion.div
+            className="w-2 h-2 rounded-full bg-teal-500"
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.9 }}
+          />
+        </div>
       </motion.div>
 
       {/* Enhanced Carousel Section */}
-      <motion.div 
+      <motion.div
         className="relative px-2 sm:px-0 z-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -788,36 +859,41 @@ export default function Categories() {
         transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
       >
         <Carousel
+          plugins={[autoplayPlugin.current]}
           opts={{
             align: "start",
             loop: true,
-            dragFree: true,
+            dragFree: false,
             containScroll: "trimSnaps",
+            skipSnaps: false,
+            duration: 25,
           }}
           className="w-full"
+          onMouseEnter={() => autoplayPlugin.current.stop()}
+          onMouseLeave={() => autoplayPlugin.current.play()}
         >
           <CarouselContent className="-ml-4 sm:-ml-6">
             {categories.map((category, index) => (
-              <CarouselItem 
-                key={index} 
+              <CarouselItem
+                key={index}
                 className="pl-4 sm:pl-6 basis-[85%] sm:basis-[70%] md:basis-[48%] lg:basis-[32%] xl:basis-[25%]"
               >
-                <EnhancedDestinationCard 
-                  category={category} 
-                  index={index} 
+                <EnhancedDestinationCard
+                  category={category}
+                  index={index}
                   onExplore={handleExplore}
                 />
               </CarouselItem>
             ))}
           </CarouselContent>
-          
-          {/* Custom Navigation Buttons */}
-          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white text-emerald-600 hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110" />
-          <CarouselNext className="right-0 sm:-right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white text-emerald-600 hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-110" />
+
+          {/* Enhanced Custom Navigation Buttons with emerald theme */}
+          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+          <CarouselNext className="right-0 sm:-right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
         </Carousel>
-        
-        {/* Mobile Swipe Indicator */}
-        <motion.div 
+
+        {/* Enhanced Mobile Swipe Indicator with auto-play status */}
+        <motion.div
           className="flex sm:hidden justify-center mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -825,25 +901,48 @@ export default function Categories() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-emerald-400 blur-lg opacity-20 animate-pulse" />
-            <div className="relative text-emerald-600 text-sm font-['Lato'] flex items-center gap-3 px-6 py-3.5 rounded-full bg-white border-2 border-emerald-200 font-bold shadow-lg">
-              <ArrowRight className="w-5 h-5 animate-bounce -scale-x-100" />
-              <span>Swipe to Explore</span>
-              <ArrowRight className="w-5 h-5 animate-bounce" />
+            <motion.div
+              className="absolute inset-0 bg-emerald-400 blur-lg"
+              animate={{
+                opacity: [0.2, 0.4, 0.2],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <div className="relative text-emerald-600 text-sm font-['Lato'] flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/95 backdrop-blur-md border-2 border-emerald-300 font-bold shadow-lg">
+              <motion.div
+                animate={{ x: [-3, 0, -3] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowRight className="w-5 h-5 -scale-x-100 text-emerald-500" />
+              </motion.div>
+              <span className="bg-gradient-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
+                Auto-playing • Swipe to Explore
+              </span>
+              <motion.div
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowRight className="w-5 h-5 text-emerald-500" />
+              </motion.div>
             </div>
           </div>
         </motion.div>
       </motion.div>
 
       {/* Modals */}
-      <DestinationModal 
+      <DestinationModal
         category={selectedDestination}
         isOpen={showDetailsModal}
         onClose={handleCloseDetails}
         onContactClick={handleContactClick}
       />
-      
-      <ContactFormModal 
+
+      <ContactFormModal
         category={selectedDestination}
         isOpen={showContactModal}
         onClose={handleCloseContact}

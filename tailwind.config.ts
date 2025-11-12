@@ -80,10 +80,39 @@ export default {
             height: "0",
           },
         },
+        "carousel-fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "smooth-scale": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.02)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "carousel-fade-in": "carousel-fade-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "smooth-scale": "smooth-scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
+      },
+      transitionTimingFunction: {
+        "premium": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "premium-out": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "premium-in-out": "cubic-bezier(0.87, 0, 0.13, 1)",
+        "spring": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
       },
     },
   },

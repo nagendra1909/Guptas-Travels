@@ -3,9 +3,31 @@ import { Sparkles, Users, Zap } from "lucide-react";
 export default function Features() {
   return (
     <section className="w-full px-4 sm:px-8 lg:px-24 py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-[hsl(var(--background))] via-white to-[hsl(var(--sacred-saffron))/3] relative overflow-hidden">
+      {/* Top Wave Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg className="relative block w-full h-10 sm:h-14" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                className="fill-[hsl(var(--sacred-saffron))]/5"></path>
+        </svg>
+      </div>
+
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] bg-gradient-to-br from-[hsl(var(--sacred-saffron))/8] to-transparent rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-[180px] h-[180px] sm:w-[300px] sm:h-[300px] bg-gradient-to-tr from-[hsl(var(--kumkum-red))/4] to-transparent rounded-full blur-3xl -z-10"></div>
+
+      {/* Decorative Stroke Patterns */}
+      <div className="absolute top-24 left-8 w-16 h-16 opacity-10 hidden lg:block">
+        <svg viewBox="0 0 100 100" className="text-[hsl(var(--sacred-saffron))]">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4,4" />
+          <polygon points="50,25 75,75 25,75" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3,3" />
+        </svg>
+      </div>
+      <div className="absolute bottom-20 right-12 w-20 h-20 opacity-10 hidden lg:block">
+        <svg viewBox="0 0 100 100" className="text-[hsl(var(--kumkum-red))]">
+          <path d="M50,10 L90,50 L50,90 L10,50 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6,3" />
+          <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      </div>
 
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-10 lg:gap-12">
         {/* Left side - Image section - Hidden on mobile & tablet, visible on desktop */}
@@ -114,6 +136,8 @@ export default function Features() {
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
             <div className="group text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-gradient-to-br from-white via-[hsl(var(--sacred-saffron))/5] to-white border-2 border-[hsl(var(--sacred-saffron))/20] hover:border-[hsl(var(--sacred-saffron))] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--temple-gold))] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              {/* Corner accent */}
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[hsl(var(--sacred-saffron))]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-[hsl(var(--sacred-saffron))] font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform duration-300">
                 15+
               </div>
@@ -124,6 +148,8 @@ export default function Features() {
 
             <div className="group text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-gradient-to-br from-white via-[hsl(var(--temple-gold))/5] to-white border-2 border-[hsl(var(--temple-gold))/20] hover:border-[hsl(var(--temple-gold))] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--temple-gold))] to-[hsl(var(--sacred-saffron))] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              {/* Corner accent */}
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[hsl(var(--temple-gold))]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-[hsl(var(--temple-gold))] font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform duration-300">
                 50K+
               </div>
@@ -134,6 +160,8 @@ export default function Features() {
 
             <div className="group text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-gradient-to-br from-white via-[hsl(var(--kumkum-red))/5] to-white border-2 border-[hsl(var(--kumkum-red))/20] hover:border-[hsl(var(--kumkum-red))] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[hsl(var(--kumkum-red))] to-[hsl(var(--sacred-saffron))] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+              {/* Corner accent */}
+              <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[hsl(var(--kumkum-red))]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-[hsl(var(--kumkum-red))] font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform duration-300">
                 100%
               </div>

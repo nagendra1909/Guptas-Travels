@@ -59,7 +59,7 @@ export default function Footer() {
             </div>
             <div>
               <span className="text-[#1a4d32] font-['Playfair_Display'] text-lg sm:text-xl font-bold block leading-tight">
-                guptha TRAVELS
+                GUPTHA TRAVELS
               </span>
               <span className="text-[#34a870] text-[10px] sm:text-xs font-['Lato'] tracking-wider font-medium">
                 YOUR JOURNEY PARTNER
