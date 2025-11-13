@@ -23,7 +23,7 @@ const heroImages = [
   },
   {
     id: 2,
-    image: "/temple2.png",
+    image: "/gopuram.png",
     title: "Sri Kalahasti Temple",
     subtitle: "Rahu-Ketu Pooja & Sacred Rituals",
     description: "Expert guided tours to ancient Shiva temple"
@@ -122,7 +122,7 @@ export default function HeroCarousel() {
           transition={{ duration: 0.7, ease: "easeInOut" }}
         >
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right_25%] sm:bg-center"
             style={{ backgroundImage: `url(${currentSlide.image})` }}
           />
           {/* Dark overlay for text readability */}
@@ -178,7 +178,8 @@ export default function HeroCarousel() {
                 </motion.p>
 
                 <motion.p
-                  className="text-lg sm:text-xl text-white/90 font-['Lato'] max-w-2xl drop-shadow-lg"
+                  className="text-lg sm:text-xl text-white/90 font-['Lato'] max-w-2xl drop-shadow-lg sm:leading-relaxed md:visibility-hidden sm:visibility-hidden"
+                  style={{ visibility: 'hidden' }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
