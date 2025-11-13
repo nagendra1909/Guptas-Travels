@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroCarousel from "@/components/HeroCarousel";
 import Categories from "@/components/Categories";
 import Features from "@/components/Features";
 import PopularDestinations from "@/components/PopularDestinations";
@@ -15,7 +15,7 @@ export default function Index() {
       <main>
         {/* Home Section */}
         <section id="home">
-          <Hero />
+          <HeroCarousel />
         </section>
 
         {/* Fleet Section */}
