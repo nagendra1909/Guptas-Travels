@@ -23,7 +23,7 @@ const heroImages = [
   },
   {
     id: 2,
-    image: "/srikalahasti.jpg",
+    image: "/temple2.png",
     title: "Sri Kalahasti Temple",
     subtitle: "Rahu-Ketu Pooja & Sacred Rituals",
     description: "Expert guided tours to ancient Shiva temple"
