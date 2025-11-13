@@ -12,11 +12,11 @@ import Autoplay from "embla-carousel-autoplay";
 
 const testimonials = [
   {
-    name : "Chandra",
-    location : "Tirupathi, Andhra Pradesh",
+    name : "Chandra Reddy",
+    location : "Godavari, Andhra Pradesh",
     rating: 5,
     text: "Guptha Travels provided an exceptional experience for our Tirupati pilgrimage. The vehicle was comfortable and clean, and the driver was courteous and knowledgeable about the route. Highly recommend their services for a hassle-free journey!",
-    image: "🧑‍🦳",
+    image: "👨‍💼",
     date: "September 2024",
     package: "Tirupati Darshan Package"
   },
@@ -25,7 +25,7 @@ const testimonials = [
     location: "Hyderabad, Telangana",
     rating: 5,
     text: "Exceptional service! The driver was punctual, the car was spotlessly clean, and the journey to Tirupati was comfortable. Guptha Travels made our pilgrimage truly memorable. Highly recommended for family trips!",
-    image: "👨‍💼",
+    image: "👴",
     date: "October 2024",
     package: "Tirupati Darshan Package"
   },

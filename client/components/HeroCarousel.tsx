@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, ArrowRight, Sparkles, ChevronLeft, ChevronRight, Circle } from "lucide-react";
+import { Phone, ArrowRight, Sparkles, ChevronLeft, ChevronRight, Circle, X, Mail, User, Calendar, Loader2, MapPin, Users, MessageSquare } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
@@ -50,7 +50,7 @@ const heroImages = [
     description: "Explore ancient monuments and rich history"
   },
 ];
-
+     
 export default function HeroCarousel() {
   const { toast } = useToast();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,6 +58,31 @@ export default function HeroCarousel() {
   const autoPlayRef = useRef<NodeJS.Timeout>();
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    destination: '',
+    date: '',
+    guests: '',
+    message: ''
+  });
+
+  // Destinations list
+  const destinations = [
+    "Tirupati Temples",
+    "Sri Kalahasti",
+    "Kanipakam",
+    "Talakona Falls",
+    "Chandragiri Fort",
+    "Nagalapuram Falls",
+    "Sri Venkateswara Zoo",
+    "Papavinasanam",
+    "Akasa Ganga",
+    "Others"
+  ];
 
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
@@ -134,6 +159,94 @@ export default function HeroCarousel() {
       ),
       duration: 5000,
     });
+  };
+
+  const handleBookingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.destination) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields (Name, Email, Phone, Destination)",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Prepare email template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        destination: formData.destination,
+        travel_date: formData.date || 'Not specified',
+        guests: formData.guests || 'Not specified',
+        message: formData.message || 'No additional message',
+        to_email: 'praneeth622@gmail.com'
+      };
+
+      // Send email via EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "✅ Booking Request Sent!",
+          description: (
+            <div className="mt-2 space-y-2">
+              <p className="text-sm font-semibold">
+                Thank you for choosing Guptha Travels!
+              </p>
+              <p className="text-sm">
+                We'll contact you within 24 hours to confirm your {formData.destination} trip.
+              </p>
+              <p className="text-xs text-gray-500">
+                Check your email for confirmation.
+              </p>
+            </div>
+          ),
+          duration: 6000,
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          destination: '',
+          date: '',
+          guests: '',
+          message: ''
+        });
+        setShowBookingForm(false);
+      }
+    } catch (error) {
+      console.error('Email send error:', error);
+      toast({
+        title: "❌ Sending Failed",
+        description: "Please try again or call us directly at +91 9704466557",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const currentSlide = heroImages[currentIndex];
@@ -230,6 +343,7 @@ export default function HeroCarousel() {
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <motion.button
+                  onClick={() => setShowBookingForm(true)}
                   className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-['Lato'] font-bold text-lg shadow-2xl relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -329,6 +443,201 @@ export default function HeroCarousel() {
           Auto-playing
         </motion.div>
       )}
+
+      {/* Booking Form Modal */}
+      <AnimatePresence>
+        {showBookingForm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
+            onClick={() => setShowBookingForm(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setShowBookingForm(false)}
+                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              >
+                <X className="w-5 h-5 text-gray-600" />
+              </button>
+
+              {/* Form Header */}
+              <div className="bg-gradient-to-r from-emerald-500 to-teal-500 p-6 rounded-t-2xl">
+                <h2 className="text-3xl font-['Playfair_Display'] font-bold text-white mb-2">
+                  Book Your Journey
+                </h2>
+                <p className="text-white/90 font-['Lato']">
+                  Fill in your details and we'll contact you within 24 hours
+                </p>
+              </div>
+
+              {/* Form */}
+              <form onSubmit={handleBookingSubmit} className="p-6 space-y-5">
+                {/* Name */}
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                    <User className="w-4 h-4 text-emerald-600" />
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                    <Mail className="w-4 h-4 text-emerald-600" />
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                    <Phone className="w-4 h-4 text-emerald-600" />
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                    placeholder="+91 9876543210"
+                  />
+                </div>
+
+                {/* Destination */}
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                    <MapPin className="w-4 h-4 text-emerald-600" />
+                    Destination *
+                  </label>
+                  <select
+                    name="destination"
+                    value={formData.destination}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all bg-white"
+                  >
+                    <option value="">Select your destination</option>
+                    {destinations.map((dest) => (
+                      <option key={dest} value={dest}>
+                        {dest}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Date and Guests Row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Date */}
+                  <div>
+                    <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                      <Calendar className="w-4 h-4 text-emerald-600" />
+                      Travel Date
+                    </label>
+                    <input
+                      type="date"
+                      name="date"
+                      value={formData.date}
+                      onChange={handleInputChange}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                    />
+                  </div>
+
+                  {/* Number of Guests */}
+                  <div>
+                    <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                      <Users className="w-4 h-4 text-emerald-600" />
+                      Number of Guests
+                    </label>
+                    <input
+                      type="number"
+                      name="guests"
+                      value={formData.guests}
+                      onChange={handleInputChange}
+                      min="1"
+                      max="50"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                      placeholder="e.g., 4"
+                    />
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+                    <MessageSquare className="w-4 h-4 text-emerald-600" />
+                    Additional Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none"
+                    placeholder="Any special requests or questions?"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full px-6 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Sending Request...
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="w-5 h-5" />
+                        Confirm Booking Request
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Footer Note */}
+                <p className="text-center text-sm text-gray-500 pt-2">
+                  We'll contact you within 24 hours to confirm your booking
+                </p>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

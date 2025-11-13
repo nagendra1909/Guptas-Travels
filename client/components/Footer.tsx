@@ -1,5 +1,6 @@
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -238,6 +239,17 @@ export default function Footer() {
             </svg>
           </a>
         </div>
+      </div>
+
+      {/* Watermark */}
+      <div className="mt-4 text-center">
+        <p className="text-[#999999] font-['Lato'] text-xs">
+          Designed and Developed by 
+          <a href="https://srnritsolutions.com/" target="_blank" rel="noopener noreferrer" className="text-[#34a870] hover:underline ml-1">
+            SRNR IT SOLUTIONS
+          </a>
+         .
+        </p>
       </div>
     </footer>
   );

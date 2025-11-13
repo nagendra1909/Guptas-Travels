@@ -31,7 +31,8 @@ export default function Hero() {
     "Nagalapuram Falls",
     "Sri Venkateswara Zoo",
     "Papavinasanam",
-    "Akasa Ganga"
+    "Akasa Ganga",
+    "Others"
   ];
 
   // Smooth scroll progress tracking
