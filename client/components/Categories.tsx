@@ -493,7 +493,7 @@ function ContactFormModal({
         guests: formData.guests || 'Not specified',
         destination: category?.name || 'General Inquiry',
         message: formData.message || 'No special requirements',
-        to_email: 'admin@guptatravels.com', // Your admin email
+        to_email: 'admin@gupthatravels.com', // Your admin email
       };
 
       // Send email using EmailJS

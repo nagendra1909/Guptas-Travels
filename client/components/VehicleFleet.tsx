@@ -156,7 +156,7 @@ export default function VehicleFleet() {
 
       {/* Single Vehicle Carousel - Clean & Simple */}
       <div className="max-w-6xl mx-auto mb-16 sm:mb-20">
-        <div className="relative h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group">
+        <div className="relative h-[500px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group bg-white">
           {vehicles.map((vehicle, index) => (
             <div
               key={index}
@@ -167,11 +167,11 @@ export default function VehicleFleet() {
               }`}
             >
               {/* Full Screen Vehicle Image */}
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 flex items-center justify-center bg-white p-4 sm:p-0">
                 <img
                   src={vehicle.image}
                   alt={`Premium ${vehicle.name}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain sm:object-cover"
                 />
                 {/* Gradient Overlay - Always visible */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -180,11 +180,11 @@ export default function VehicleFleet() {
               {/* Vehicle Details - Always visible at bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-white">
                 {/* Vehicle Badge */}
-                <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
+                {/* <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
                   <span className="text-emerald-300 font-['Lato'] text-sm font-semibold">
                     {vehicle.badge}
                   </span>
-                </div>
+                </div> */}
                 
                 {/* Vehicle Name */}
                 <h3 className="text-white font-['Playfair_Display'] text-3xl sm:text-5xl font-bold mb-2">
@@ -304,7 +304,7 @@ export default function VehicleFleet() {
             </div>
             <ul className="space-y-3">
               {[
-                { icon: "👨‍💼", title: "Elite Driver", desc: "5+ years expert" },
+                { icon: "👨‍💼", title: "Elite Driver", desc: "5+ years experience" },
                 {
                   icon: "🔧",
                   title: "Premium Maintenance",
@@ -414,7 +414,7 @@ export default function VehicleFleet() {
               Experience Premium Transportation
             </h4>
             <p className="text-[hsl(var(--muted-foreground))] mb-8 font-['Lato'] text-lg">
-              Book your extraordinary journey with guptha TRAVELS today
+              Book your extraordinary journey with GUPTHA TRAVELS today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
               <a

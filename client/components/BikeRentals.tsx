@@ -1,4 +1,4 @@
-import { Bike, ArrowRight, MessageCircle, CheckCircle2, Sparkles, Phone } from "lucide-react";
+import { Bike, ArrowRight, MessageCircle, CheckCircle2, Phone } from "lucide-react";
 
 const bikes = [
   {

@@ -103,7 +103,7 @@ export default function Hero() {
         guests: formData.guests || 'Not specified',
         destination: formData.destination,
         message: formData.message || 'No special requirements',
-        to_email: 'admin@guptatravels.com',
+        to_email: 'admin@gupthatravels.com',
       };
 
       // Send email using EmailJS

@@ -104,10 +104,10 @@ export default function Features() {
 
         {/* Right side - Content - Full width on mobile, shares width on desktop */}
         <div className="w-full lg:flex-1 order-1 lg:order-2">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))/15] to-[hsl(var(--kumkum-red))/10] mb-3 sm:mb-4 border border-[hsl(var(--sacred-saffron))/20] hover:scale-105 transition-transform duration-300">
+          <div className="inline-flex bg-emerald-200 items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))/15] to-[hsl(var(--kumkum-red))/10] mb-3 sm:mb-4 border border-[hsl(var(--sacred-saffron))/20] hover:scale-105 transition-transform duration-300">
             <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[hsl(var(--sacred-saffron))]" />
             <span className="text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-xs sm:text-sm tracking-widest">
-              ABOUT GUPTA TRAVELS
+              ABOUT GUPTHA TRAVELS
             </span>
           </div>
 

@@ -17,7 +17,7 @@ const heroImages = [
   {
     id: 6,
     image: "/Tiger.png",
-    title: "Tiger Reserve",
+    title: "Zoo Park",
     subtitle: "Wildlife Sanctuary & Adventure",
     description: "Explore the rich biodiversity and wildlife"
   },
