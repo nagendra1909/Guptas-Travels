@@ -10,8 +10,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Premium AC Climate Control", "Leather Appointments", "Advanced GPS Navigation", "Premium Audio System", "USB Charging", "Water Bottle Service"],
     specs: ["Avg Mileage: 15-18 km/l", "Luggage: 400L", "Safety: 5-Star Rating"],
-    image:
-      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Aura/10126/1694588549389/front-left-side-47.jpg",
+    image: "/Shift.jpeg",
     badge: "Business Class",
     icon: "🎩",
     accentColor: "from-blue-500 to-blue-600",
@@ -27,8 +26,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Dual-Zone Climate Control", "Panoramic Sunroof", "Ample Luggage Space", "Premium Upholstery", "Individual Reading Lights", "Refreshment Service"],
     specs: ["Avg Mileage: 14-16 km/l", "Luggage: 500L", "Safety: Advanced ABS"],
-    image:
-      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga/10288/1755776579514/front-left-side-47.jpg",
+    image: "/big-car.jpeg",
     badge: "Family Premium",
     icon: "�‍👩‍👧‍👦",
     accentColor: "from-emerald-500 to-emerald-600",
@@ -44,8 +42,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Triple-Zone Automatic AC", "Leather Interior", "Power Steering + Power Windows", "Premium Sound System", "Cup Holders & Storage", "Concierge Service Available"],
     specs: ["Avg Mileage: 12-14 km/l", "Luggage: 600L", "Safety: 6+ Airbags"],
-    image:
-      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Innova-Crysta/9612/1697698611076/front-left-side-47.jpg",
+    image: "/Innova.jpeg",
     badge: "Enterprise Grade",
     icon: "�",
     accentColor: "from-purple-500 to-purple-600",
@@ -61,8 +58,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Individual Pushback Seats", "Built-in Entertainment System", "Wide Aisles for Movement", "Multiple USB Charging Ports", "Premium Washroom Facility", "Dedicated Group Coordinator"],
     specs: ["Avg Mileage: 8-10 km/l", "Luggage: 1200L", "Safety: Anti-Skid Braking"],
-    image:
-      "https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-3350WB-mob.png",
+    image: "/Van-small.jpeg",
     badge: "Corporate Grade",
     icon: "🏢",
     accentColor: "from-orange-500 to-orange-600",
@@ -78,8 +74,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Reclining Pushback Seats", "Full HD Entertainment Display", "Premium Cabin Lighting", "Advanced Safety Features", "Real-time GPS Tracking", "Executive Travel Protocol"],
     specs: ["Avg Mileage: 8-9 km/l", "Luggage: 1500L", "Safety: Stability Control"],
-    image:
-      "https://assets.tractorjunction.com/truck-junction/assets/images/truck/urbania-1669023374.webp",
+    image: "/Van-big.jpeg",
     badge: "Enterprise Premium",
     icon: "🌟",
     accentColor: "from-red-500 to-red-600",
@@ -95,8 +90,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Luxury Reclining Seats", "Dual Entertainment Systems", "Individual Reading Lights", "Advanced Climate Control", "Professional Attendant", "VIP Travel Coordination"],
     specs: ["Avg Mileage: 7-8 km/l", "Luggage: 1800L", "Safety: ESC + ABS"],
-    image:
-      "https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-3350WB-mob.png",
+    image: "/Van-big.jpeg",
     badge: "Ultimate Premium",
     icon: "�",
     accentColor: "from-amber-500 to-amber-600",
@@ -108,7 +102,6 @@ import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function VehicleFleet() {
   const [currentVehicle, setCurrentVehicle] = useState<number>(0);
-  const [showDetails, setShowDetails] = useState<boolean>(false);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
 
@@ -130,107 +123,11 @@ export default function VehicleFleet() {
   return (
     <section className="w-full px-4 sm:px-8 lg:px-24 py-16 sm:py-20 bg-gradient-to-b from-[hsl(var(--background))] via-white to-[hsl(var(--background))]">
       {/* Animated Highway Marquee */}
-      <div className="relative w-full h-32 sm:h-40 lg:h-48 mb-12 sm:mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        {/* Highway Background - Black Road */}
-        <div className="absolute inset-0 bg-black">
-          {/* CSS Animations */}
-          <style>{`
-            @keyframes car-move {
-              0% { transform: translate(-100%, -50%); }
-              100% { transform: translate(calc(100vw + 100%), -50%); }
-            }
-          `}</style>
-        </div>
-
-        {/* Top White Edge Line */}
-        <div className="absolute top-3 left-0 w-full h-1 bg-white"></div>
-
-        {/* Bottom White Edge Line */}
-        <div className="absolute bottom-3 left-0 w-full h-1 bg-white"></div>
-
-        {/* Center Lane - Static White Dashed Lines */}
-        <div
-          className="absolute top-1/2 left-0 w-full flex justify-around items-center"
-          style={{ transform: "translateY(-50%)" }}
-        >
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className="w-8 sm:w-12 h-1 bg-white"></div>
-          ))}
-        </div>
-
-        {/* Animated Car with Marquee */}
-        <div
-          className="absolute top-1/4 -translate-y-1/2"
-          style={{
-            animation: "car-move 8s linear infinite",
-          }}
-        >
-          {/* Car Image */}
-          <img
-            src="/car.png"
-            alt="Moving Car"
-            className="h-20 sm:h-24 lg:h-28 w-auto drop-shadow-2xl"
-          />
-        </div>
-        <div
-          className="absolute top-3/4 translate-x-1/2"
-          style={{
-            animation: "car-move 8s linear infinite reverse",
-          }}
-        >
-          {/* Van Image */}
-          <img
-            src="/van.png"
-            alt="Moving Van"
-            className="h-20 sm:h-24 lg:h-28 w-auto drop-shadow-2xl"
-          />
-        </div>
-
-        {/* Speed Lines Effect */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute top-1/2 h-0.5 bg-white/30"
-              style={{
-                left: `${i * 20}%`,
-                width: "15%",
-                transform: "translateY(-50%)",
-                animation: `speed-line ${1 + i * 0.2}s linear infinite`,
-              }}
-            ></div>
-          ))}
-        </div>
-        <style>{`
-          @keyframes speed-line {
-            0% { transform: translateX(100vw) translateY(-50%); opacity: 0; }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
-            100% { transform: translateX(-100%) translateY(-50%); opacity: 0; }
-          }
-        `}</style>
-
-        {/* Text Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-          <div className="text-center">
-            <h3 className="text-white font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold drop-shadow-lg">
-              Your Journey Awaits
-            </h3>
-            <p className="text-white/90 font-['Lato'] text-sm sm:text-base mt-1 pb-5 drop-shadow-lg">
-              Premium vehicles for every destination
-            </p>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Premium Section Header */}
       <div className="text-center mb-16 sm:mb-20">
-        <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 border border-emerald-400/30 mb-4">
-          {/* <span className="text-2xl">✨</span> */}
-          {/* <span className="text-emerald-700 font-['Lato'] font-semibold text-sm tracking-widest uppercase">
-            PREMIUM FLEET COLLECTION
-          </span> */}
-        </div>
+        
         <h2 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
           Our Vehicles
         </h2>
@@ -257,72 +154,9 @@ export default function VehicleFleet() {
         </div>
       </div>
 
-      {/* Single Vehicle Carousel with Mouse Navigation */}
+      {/* Single Vehicle Carousel - Clean & Simple */}
       <div className="max-w-6xl mx-auto mb-16 sm:mb-20">
-        <div
-          className="relative h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl"
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const width = rect.width;
-            const centerZone = width * 0.5; // 50% center zone for image
-            const leftZone = (width - centerZone) / 2;
-
-            if (x < leftZone) {
-              // Left zone - hover to go previous
-              e.currentTarget.style.cursor = "w-resize";
-            } else if (x > leftZone + centerZone) {
-              // Right zone - hover to go next
-              e.currentTarget.style.cursor = "e-resize";
-            } else {
-              // Center zone - show details on hover
-              e.currentTarget.style.cursor = "default";
-            }
-          }}
-        >
-          {/* Left Navigation Zone - Hover to go previous */}
-          <div
-            className="absolute left-0 top-0 bottom-0 w-1/4 z-20"
-            onMouseEnter={() => {
-              setIsAutoPlaying(false);
-              setCurrentVehicle(
-                currentVehicle === 0 ? vehicles.length - 1 : currentVehicle - 1,
-              );
-              setShowDetails(false);
-            }}
-            onMouseLeave={() => {
-              setIsAutoPlaying(true);
-            }}
-          ></div>
-
-          {/* Center Content Zone - Hover to show details */}
-          <div
-            className="absolute left-1/4 right-1/4 top-0 bottom-0 z-20"
-            onMouseEnter={() => {
-              setIsAutoPlaying(false);
-              setShowDetails(true);
-            }}
-            onMouseLeave={() => {
-              setShowDetails(false);
-              setIsAutoPlaying(true);
-            }}
-          ></div>
-
-          {/* Right Navigation Zone - Hover to go next */}
-          <div
-            className="absolute right-0 top-0 bottom-0 w-1/4 z-20"
-            onMouseEnter={() => {
-              setIsAutoPlaying(false);
-              setCurrentVehicle(
-                currentVehicle === vehicles.length - 1 ? 0 : currentVehicle + 1,
-              );
-              setShowDetails(false);
-            }}
-            onMouseLeave={() => {
-              setIsAutoPlaying(true);
-            }}
-          ></div>
-
+        <div className="relative h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group">
           {vehicles.map((vehicle, index) => (
             <div
               key={index}
@@ -339,116 +173,88 @@ export default function VehicleFleet() {
                   alt={`Premium ${vehicle.name}`}
                   className="w-full h-full object-cover"
                 />
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                {/* Gradient Overlay - Always visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               </div>
 
-              {/* Vehicle Details Overlay - Shows on hover in center */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent transition-opacity duration-300 pointer-events-none ${
-                  showDetails && index === currentVehicle
-                    ? "opacity-100"
-                    : "opacity-0"
-                }`}
-              >
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-white">
-                  {/* Vehicle Name & Badge */}
-                  <div className="mb-4">
-                    <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
-                      <span className="text-emerald-300 font-['Lato'] text-sm font-semibold">
-                        {vehicle.badge}
-                      </span>
-                    </div>
-                    <h3 className="text-white font-['Playfair_Display'] text-3xl sm:text-5xl font-bold mb-2">
-                      {vehicle.name}
-                    </h3>
-                    <p className="text-emerald-300 text-lg sm:text-xl font-['Lato'] font-semibold">
-                      {vehicle.subtitle}
+              {/* Vehicle Details - Always visible at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-white">
+                {/* Vehicle Badge */}
+                <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
+                  <span className="text-emerald-300 font-['Lato'] text-sm font-semibold">
+                    {vehicle.badge}
+                  </span>
+                </div>
+                
+                {/* Vehicle Name */}
+                <h3 className="text-white font-['Playfair_Display'] text-3xl sm:text-5xl font-bold mb-2">
+                  {vehicle.name}
+                </h3>
+                <p className="text-emerald-300 text-lg sm:text-xl font-['Lato'] font-semibold mb-6">
+                  {vehicle.subtitle}
+                </p>
+
+                {/* Pricing Cards */}
+                <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20">
+                    <p className="text-white/70 text-xs sm:text-sm font-['Lato'] mb-1">
+                      Local/Day
+                    </p>
+                    <p className="text-emerald-300 font-['Playfair_Display'] font-bold text-lg sm:text-2xl">
+                      {vehicle.localRent}
                     </p>
                   </div>
-
-                  {/* Pricing Cards */}
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6">
-                    <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20">
-                      <p className="text-white/70 text-xs sm:text-sm font-['Lato'] mb-1">
-                        Local/Day
-                      </p>
-                      <p className="text-emerald-300 font-['Playfair_Display'] font-bold text-lg sm:text-2xl">
-                        {vehicle.localRent}
-                      </p>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20">
-                      <p className="text-white/70 text-xs sm:text-sm font-['Lato'] mb-1">
-                        Per KM
-                      </p>
-                      <p className="text-emerald-300 font-['Playfair_Display'] font-bold text-lg sm:text-2xl">
-                        {vehicle.outstationRate}
-                      </p>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20">
-                      <p className="text-white/70 text-xs sm:text-sm font-['Lato'] mb-1">
-                        Capacity
-                      </p>
-                      <p className="text-emerald-300 font-['Playfair_Display'] font-bold text-lg sm:text-2xl">
-                        {vehicle.capacity.split(" ")[0]}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <p className="text-white/90 font-['Lato'] text-sm sm:text-base mb-3">
-                      Key Features:
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20">
+                    <p className="text-white/70 text-xs sm:text-sm font-['Lato'] mb-1">
+                      Per KM
                     </p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {vehicle.features.slice(0, 4).map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-['Lato']"
-                        >
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            className="flex-shrink-0"
-                          >
-                            <path
-                              d="M6 10L9 13L14 7"
-                              stroke="#6ee7b7"
-                              strokeWidth="2.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                    <p className="text-emerald-300 font-['Playfair_Display'] font-bold text-lg sm:text-2xl">
+                      {vehicle.outstationRate}
+                    </p>
                   </div>
-                </div>
-              </div>
-
-              {/* Navigation Hints */}
-              <div className="absolute top-1/2 left-4 -translate-y-1/2 opacity-50 hover:opacity-100 transition-opacity pointer-events-none">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center">
-                  <span className="text-white text-2xl">‹</span>
-                </div>
-              </div>
-              <div className="absolute top-1/2 right-4 -translate-y-1/2 opacity-50 hover:opacity-100 transition-opacity pointer-events-none">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center">
-                  <span className="text-white text-2xl">›</span>
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20">
+                    <p className="text-white/70 text-xs sm:text-sm font-['Lato'] mb-1">
+                      Capacity
+                    </p>
+                    <p className="text-emerald-300 font-['Playfair_Display'] font-bold text-lg sm:text-2xl">
+                      {vehicle.capacity.split(" ")[0]}
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* Vehicle Counter */}
-              <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-md rounded-full px-4 py-2 border border-white/40">
+              <div className="absolute top-6 right-6 bg-black/40 backdrop-blur-md rounded-full px-4 py-2 border border-white/30">
                 <span className="text-white font-['Lato'] font-semibold text-sm">
                   {index + 1} / {vehicles.length}
                 </span>
               </div>
             </div>
           ))}
+
+          {/* Navigation Buttons - Clean design */}
+          <button
+            onClick={() => {
+              setIsAutoPlaying(false);
+              setCurrentVehicle(currentVehicle === 0 ? vehicles.length - 1 : currentVehicle - 1);
+              setTimeout(() => setIsAutoPlaying(true), 5000);
+            }}
+            className="absolute top-1/2 left-4 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-2xl opacity-0 group-hover:opacity-100 hover:bg-black/60 transition-all z-30"
+            aria-label="Previous vehicle"
+          >
+            ‹
+          </button>
+          <button
+            onClick={() => {
+              setIsAutoPlaying(false);
+              setCurrentVehicle(currentVehicle === vehicles.length - 1 ? 0 : currentVehicle + 1);
+              setTimeout(() => setIsAutoPlaying(true), 5000);
+            }}
+            className="absolute top-1/2 right-4 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-2xl opacity-0 group-hover:opacity-100 hover:bg-black/60 transition-all z-30"
+            aria-label="Next vehicle"
+          >
+            ›
+          </button>
         </div>
 
         {/* Carousel Indicators */}
@@ -459,8 +265,6 @@ export default function VehicleFleet() {
               onClick={() => {
                 setIsAutoPlaying(false);
                 setCurrentVehicle(index);
-                setShowDetails(false);
-                // Resume auto-play after 5 seconds
                 setTimeout(() => setIsAutoPlaying(true), 5000);
               }}
               className={`transition-all duration-300 rounded-full ${
@@ -471,52 +275,6 @@ export default function VehicleFleet() {
               aria-label={`View ${vehicles[index].name}`}
             ></button>
           ))}
-        </div>
-
-        {/* Play/Pause Button */}
-        <div className="flex justify-center mt-4">
-          <button
-            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className="px-4 py-2 rounded-full bg-emerald-100 hover:bg-emerald-200 border border-emerald-300 text-emerald-700 font-['Lato'] font-semibold text-sm transition-all flex items-center gap-2"
-          >
-            {isAutoPlaying ? (
-              <>
-                <span>⏸</span>
-                <span>Pause Auto-Play</span>
-              </>
-            ) : (
-              <>
-                <span>▶</span>
-                <span>Resume Auto-Play</span>
-              </>
-            )}
-          </button>
-        </div>
-
-        {/* Instructions */}
-        <div className="text-center mt-6">
-          <p className="text-base text-gray-700 font-['Lato']">
-            <span className="inline-flex items-center gap-2 mx-2">
-              <span className="text-2xl">←</span>
-              <span className="font-semibold">Hover Left</span>
-              <span className="text-gray-500">Previous</span>
-            </span>
-            <span className="mx-2">•</span>
-            <span className="inline-flex items-center gap-2 mx-2">
-              <span className="text-2xl">🖱️</span>
-              <span className="font-semibold">Hover Center</span>
-              <span className="text-gray-500">Details</span>
-            </span>
-            <span className="mx-2">•</span>
-            <span className="inline-flex items-center gap-2 mx-2">
-              <span className="font-semibold">Hover Right</span>
-              <span className="text-2xl">→</span>
-              <span className="text-gray-500">Next</span>
-            </span>
-          </p>
-          <p className="text-sm text-gray-500 font-['Lato'] mt-2">
-            Auto-rotates every 4 seconds • Hover to pause
-          </p>
         </div>
       </div>
 
@@ -656,7 +414,7 @@ export default function VehicleFleet() {
               Experience Premium Transportation
             </h4>
             <p className="text-[hsl(var(--muted-foreground))] mb-8 font-['Lato'] text-lg">
-              Book your extraordinary journey with GUPTA TRAVELS today
+              Book your extraordinary journey with guptha TRAVELS today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
               <a
@@ -676,7 +434,7 @@ export default function VehicleFleet() {
                 <span>WhatsApp Us</span>
               </a>
               <a
-                href="mailto:info@guptaagency.com"
+                href="mailto:info@gupthaagency.com"
                 className="px-10 py-4 rounded-xl bg-blue-50 border-2 border-blue-200 text-blue-700 font-['Lato'] font-bold text-lg hover:bg-blue-100 transition-all flex items-center gap-2 whitespace-nowrap"
               >
                 <Mail className="w-5 h-5" />

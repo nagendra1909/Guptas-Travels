@@ -4,6 +4,7 @@ import Categories from "@/components/Categories";
 import Features from "@/components/Features";
 import PopularDestinations from "@/components/PopularDestinations";
 import VehicleFleet from "@/components/VehicleFleet";
+import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
@@ -37,6 +38,10 @@ export default function Index() {
           <PopularDestinations />
         </section>
         
+        {/* Testimonials Section */}
+        <section id="testimonials">
+          <Testimonials />
+        </section>
         
         
         {/* Contact/Newsletter Section
