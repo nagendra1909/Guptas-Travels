@@ -1,8 +1,25 @@
 import { motion, useInView } from "framer-motion";
 import { Star, Quote, Sparkles, Heart, ThumbsUp, Award } from "lucide-react";
 import { useRef } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const testimonials = [
+  {
+    name : "Chandra",
+    location : "Tirupathi, Andhra Pradesh",
+    rating: 5,
+    text: "Guptha Travels provided an exceptional experience for our Tirupati pilgrimage. The vehicle was comfortable and clean, and the driver was courteous and knowledgeable about the route. Highly recommend their services for a hassle-free journey!",
+    image: "🧑‍🦳",
+    date: "September 2024",
+    package: "Tirupati Darshan Package"
+  },
   {
     name: "Rajesh Kumar",
     location: "Hyderabad, Telangana",
@@ -91,7 +108,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: typeof testimoni
       />
 
       {/* Main card */}
-      <div className="relative h-full bg-white rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-500 overflow-hidden">
+      <div className="relative h-full bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 transition-all duration-500 overflow-hidden">
         {/* Decorative corner accent */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald-100 to-transparent opacity-50 rounded-bl-[100px]" />
         
@@ -214,6 +231,16 @@ export default function Testimonials() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
+  // Auto-scroll plugin
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+      stopOnFocusIn: true,
+    })
+  );
+
   return (
     <section 
       ref={sectionRef}
@@ -318,18 +345,75 @@ export default function Testimonials() {
         </div>
       </motion.div>
 
-      {/* Testimonials Grid */}
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              testimonial={testimonial}
-              index={index}
+      {/* Testimonials Carousel */}
+      <motion.div
+        className="max-w-7xl mx-auto relative z-10 px-2 sm:px-0"
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+      >
+        <Carousel
+          plugins={[autoplayPlugin.current]}
+          opts={{
+            align: "start",
+            loop: true,
+            dragFree: false,
+            containScroll: "trimSnaps",
+            skipSnaps: false,
+            duration: 30,
+          }}
+          className="w-full"
+          onMouseEnter={() => autoplayPlugin.current.stop()}
+          onMouseLeave={() => autoplayPlugin.current.play()}
+        >
+          <CarouselContent className="-ml-4 sm:-ml-6">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem
+                key={index}
+                className="pl-4 sm:pl-6 basis-[90%] sm:basis-[85%] md:basis-[60%] lg:basis-[45%] xl:basis-[33.333%]"
+              >
+                <TestimonialCard testimonial={testimonial} index={index} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          {/* Enhanced Custom Navigation Buttons */}
+          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+          <CarouselNext className="right-0 sm:-right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+        </Carousel>
+
+        {/* Auto-play Indicator */}
+        <motion.div
+          className="flex sm:hidden justify-center mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <div className="relative">
+            <motion.div
+              className="absolute inset-0 bg-emerald-400 blur-lg"
+              animate={{
+                opacity: [0.2, 0.4, 0.2],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
             />
-          ))}
-        </div>
-      </div>
+            {/* <div className="relative text-emerald-600 text-sm font-['Lato'] flex items-center gap-3 px-6 py-3 rounded-full bg-white/95 backdrop-blur-md border-2 border-emerald-300 font-bold shadow-lg">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="w-4 h-4" />
+              </motion.div>
+              <span>Auto-playing • Swipe to explore</span>
+            </div> */}
+          </div>
+        </motion.div>
+      </motion.div>
 
       {/* Bottom stats */}
       <motion.div
