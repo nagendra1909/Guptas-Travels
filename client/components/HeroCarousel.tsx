@@ -56,6 +56,11 @@ export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef<NodeJS.Timeout>();
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
 
   // Auto-play functionality
   useEffect(() => {
@@ -71,6 +76,30 @@ export default function HeroCarousel() {
       }
     };
   }, [isAutoPlaying]);
+
+  // Touch handlers for swipe
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0); // Reset touch end
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrevious();
+    }
+  };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -110,7 +139,12 @@ export default function HeroCarousel() {
   const currentSlide = heroImages[currentIndex];
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section
+      className="relative w-full h-screen overflow-hidden bg-black"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {/* Image Carousel */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -229,10 +263,10 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on mobile, visible on tablet and up */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 shadow-xl flex items-center justify-center group"
+        className="hidden sm:flex absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 shadow-xl items-center justify-center group"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-7 h-7 group-hover:scale-110 transition-transform" />
@@ -240,7 +274,7 @@ export default function HeroCarousel() {
 
       <button
         onClick={goToNext}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 shadow-xl flex items-center justify-center group"
+        className="hidden sm:flex absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 shadow-xl items-center justify-center group"
         aria-label="Next slide"
       >
         <ChevronRight className="w-7 h-7 group-hover:scale-110 transition-transform" />
