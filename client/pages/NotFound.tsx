@@ -8,7 +8,7 @@ const NotFound = () => {
 
   useEffect(() => {
     // Set meta tags for SEO (noindex for 404 pages)
-    document.title = "404 - Page Not Found | GUPTA TRAVELS";
+    document.title = "404 - Page Not Found | GUPTHA TRAVELS";
     
     // Add or update noindex meta tag
     let metaRobots = document.querySelector('meta[name="robots"]');
@@ -32,7 +32,7 @@ const NotFound = () => {
       if (metaRobots) {
         metaRobots.setAttribute('content', 'index, follow');
       }
-      document.title = "GUPTA TRAVELS - Your Trusted Travel Partner";
+      document.title = "GUPTHA TRAVELS - Your Trusted Travel Partner";
     };
   }, [location.pathname]);
 
@@ -148,7 +148,7 @@ const NotFound = () => {
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-[hsl(var(--border))] shadow-md">
             <Users className="w-6 h-6 text-[hsl(var(--sacred-saffron))]" />
             <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-sm">
-              <span className="font-bold text-[hsl(var(--sacred-saffron))]">gupta Travels</span> - Your trusted pilgrimage partner
+              <span className="font-bold text-[hsl(var(--sacred-saffron))]">guptha Travels</span> - Your trusted pilgrimage partner
             </p>
           </div>
         </div>

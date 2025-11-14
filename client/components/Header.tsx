@@ -23,7 +23,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "destinations", "packages", "fleet", "contact"];
+      const sections = ["home", "about", "destinations","testimonials", "fleet", "contact"];
       const scrollPosition = window.scrollY + 150;
 
       for (const sectionId of sections) {
@@ -63,8 +63,8 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3 relative z-10">
           <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
             <img 
-              src="/gupta_logo_text.png" 
-              alt="GUPTA Travels" 
+              src="/Logo.png" 
+              alt="GUPTHA Travels" 
               width={80}
               height={80}
               loading="eager"
@@ -92,7 +92,7 @@ export default function Header() {
             { id: 'fleet', label: 'Our Fleet' },
             { id: 'about', label: 'About Us' },
             { id: 'destinations', label: 'Destinations' },
-            { id: 'packages', label: 'Packages' },
+            { id: 'testimonials', label: 'Testimonials' },
           ].map((item) => (
             <button
               key={item.id}

@@ -10,7 +10,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Premium AC Climate Control", "Leather Appointments", "Advanced GPS Navigation", "Premium Audio System", "USB Charging", "Water Bottle Service"],
     specs: ["Avg Mileage: 15-18 km/l", "Luggage: 400L", "Safety: 5-Star Rating"],
-    image: "/Shift.jpeg",
+    image: "/redcar.png",
     badge: "Business Class",
     icon: "🎩",
     accentColor: "from-blue-500 to-blue-600",
@@ -26,7 +26,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Dual-Zone Climate Control", "Panoramic Sunroof", "Ample Luggage Space", "Premium Upholstery", "Individual Reading Lights", "Refreshment Service"],
     specs: ["Avg Mileage: 14-16 km/l", "Luggage: 500L", "Safety: Advanced ABS"],
-    image: "/big-car.jpeg",
+    image: "/redcar2.png",
     badge: "Family Premium",
     icon: "�‍👩‍👧‍👦",
     accentColor: "from-emerald-500 to-emerald-600",
@@ -42,7 +42,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Triple-Zone Automatic AC", "Leather Interior", "Power Steering + Power Windows", "Premium Sound System", "Cup Holders & Storage", "Concierge Service Available"],
     specs: ["Avg Mileage: 12-14 km/l", "Luggage: 600L", "Safety: 6+ Airbags"],
-    image: "/Innova.jpeg",
+    image: "/innova.png",
     badge: "Enterprise Grade",
     icon: "�",
     accentColor: "from-purple-500 to-purple-600",
@@ -58,7 +58,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Individual Pushback Seats", "Built-in Entertainment System", "Wide Aisles for Movement", "Multiple USB Charging Ports", "Premium Washroom Facility", "Dedicated Group Coordinator"],
     specs: ["Avg Mileage: 8-10 km/l", "Luggage: 1200L", "Safety: Anti-Skid Braking"],
-    image: "/Van-small.jpeg",
+    image: "/image1.png",
     badge: "Corporate Grade",
     icon: "🏢",
     accentColor: "from-orange-500 to-orange-600",
@@ -74,7 +74,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Reclining Pushback Seats", "Full HD Entertainment Display", "Premium Cabin Lighting", "Advanced Safety Features", "Real-time GPS Tracking", "Executive Travel Protocol"],
     specs: ["Avg Mileage: 8-9 km/l", "Luggage: 1500L", "Safety: Stability Control"],
-    image: "/Van-big.jpeg",
+    image: "/van1.png",
     badge: "Enterprise Premium",
     icon: "🌟",
     accentColor: "from-red-500 to-red-600",
@@ -90,7 +90,7 @@ const vehicles = [
     minKms: "300 kms",
     features: ["Luxury Reclining Seats", "Dual Entertainment Systems", "Individual Reading Lights", "Advanced Climate Control", "Professional Attendant", "VIP Travel Coordination"],
     specs: ["Avg Mileage: 7-8 km/l", "Luggage: 1800L", "Safety: ESC + ABS"],
-    image: "/Van-big.jpeg",
+    image: "/van3.png",
     badge: "Ultimate Premium",
     icon: "�",
     accentColor: "from-amber-500 to-amber-600",
@@ -156,7 +156,7 @@ export default function VehicleFleet() {
 
       {/* Single Vehicle Carousel - Clean & Simple */}
       <div className="max-w-6xl mx-auto mb-16 sm:mb-20">
-        <div className="relative h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group">
+        <div className="relative h-[500px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group bg-white">
           {vehicles.map((vehicle, index) => (
             <div
               key={index}
@@ -167,11 +167,11 @@ export default function VehicleFleet() {
               }`}
             >
               {/* Full Screen Vehicle Image */}
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 flex items-center justify-center bg-white p-4 sm:p-0">
                 <img
                   src={vehicle.image}
                   alt={`Premium ${vehicle.name}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain sm:object-cover"
                 />
                 {/* Gradient Overlay - Always visible */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -180,11 +180,11 @@ export default function VehicleFleet() {
               {/* Vehicle Details - Always visible at bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-white">
                 {/* Vehicle Badge */}
-                <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
+                {/* <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
                   <span className="text-emerald-300 font-['Lato'] text-sm font-semibold">
                     {vehicle.badge}
                   </span>
-                </div>
+                </div> */}
                 
                 {/* Vehicle Name */}
                 <h3 className="text-white font-['Playfair_Display'] text-3xl sm:text-5xl font-bold mb-2">
@@ -304,7 +304,7 @@ export default function VehicleFleet() {
             </div>
             <ul className="space-y-3">
               {[
-                { icon: "👨‍💼", title: "Elite Driver", desc: "5+ years expert" },
+                { icon: "👨‍💼", title: "Elite Driver", desc: "5+ years experience" },
                 {
                   icon: "🔧",
                   title: "Premium Maintenance",
@@ -414,7 +414,7 @@ export default function VehicleFleet() {
               Experience Premium Transportation
             </h4>
             <p className="text-[hsl(var(--muted-foreground))] mb-8 font-['Lato'] text-lg">
-              Book your extraordinary journey with guptha TRAVELS today
+              Book your extraordinary journey with GUPTHA TRAVELS today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
               <a

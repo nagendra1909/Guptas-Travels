@@ -31,7 +31,8 @@ export default function Hero() {
     "Nagalapuram Falls",
     "Sri Venkateswara Zoo",
     "Papavinasanam",
-    "Akasa Ganga"
+    "Akasa Ganga",
+    "Others"
   ];
 
   // Smooth scroll progress tracking
@@ -102,7 +103,7 @@ export default function Hero() {
         guests: formData.guests || 'Not specified',
         destination: formData.destination,
         message: formData.message || 'No special requirements',
-        to_email: 'admin@guptatravels.com',
+        to_email: 'admin@gupthatravels.com',
       };
 
       // Send email using EmailJS
@@ -581,15 +582,15 @@ export default function Hero() {
         <div
           className="absolute top-1/4 translate-y-1/2"
           style={{
-            animation: "car-move 8s linear infinite reverse",
+            animation: "car-move 6s linear infinite",
           }}
         >
           {/* Van Image */}
-          <img
-            src="/van.png"
+          {/* <img
+            src="/van-flip-removebg.png"
             alt="Moving Van"
-            className="h-20 sm:h-24 lg:h-28 w-auto drop-shadow-2xl"
-          />
+            className="h-22 w-auto sm:h-24 lg:h-28 w-auto drop-shadow-2xl"
+          /> */}
         </div>
 
         {/* Speed Lines Effect */}

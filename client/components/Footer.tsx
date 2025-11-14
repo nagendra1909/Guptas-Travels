@@ -1,5 +1,6 @@
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -52,7 +53,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
               <img
-                src="/gupta_logo_text.png"
+                src="/Logo.png"
                 alt="guptha TRAVELS"
                 className="w-full h-full object-contain"
               />
@@ -89,12 +90,28 @@ export default function Footer() {
               </li>
               <li>
                 <button
+                  onClick={() => scrollToSection("fleet")}
+                  className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer"
+                >
+                  Our Fleet
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => scrollToSection("about")}
                   className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer"
                 >
                   About Us
                 </button>
               </li>
+              {/* <li>
+                <button
+                  onClick={() => scrollToSection("packages")}
+                  className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer"
+                >
+                  Packages
+                </button>
+              </li> */}
               <li>
                 <button
                   onClick={() => scrollToSection("destinations")}
@@ -103,22 +120,7 @@ export default function Footer() {
                   Destinations
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("packages")}
-                  className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer"
-                >
-                  Packages
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("fleet")}
-                  className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer"
-                >
-                  Our Fleet
-                </button>
-              </li>
+              
             </ul>
           </div>
 
@@ -133,12 +135,8 @@ export default function Footer() {
               <li className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
                 Outstation Trips
               </li>
-              <li className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
-                Airport Pickup
-              </li>
-              <li className="hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
-                Wedding Events
-              </li>
+
+
             </ul>
           </div>
 
@@ -238,6 +236,17 @@ export default function Footer() {
             </svg>
           </a>
         </div>
+      </div>
+
+      {/* Watermark */}
+      <div className="mt-4 text-center">
+        <p className="text-[#999999] font-['Lato'] text-xs">
+          Designed and Developed by
+          <a href="https://srnritsolutions.com/" target="_blank" rel="noopener noreferrer" className="text-[#34a870] hover:underline ml-1">
+            SRNR IT SOLUTIONS
+          </a>
+          .
+        </p>
       </div>
     </footer>
   );
