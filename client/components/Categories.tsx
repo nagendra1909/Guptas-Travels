@@ -22,15 +22,29 @@ const categories = [
     duration: "Full Day",
     rating: 4.9,
     visitors: "10k+ visitors",
+    detailedDescription: "Experience the divine aura of Lord Venkateswara at the world-famous Tirumala Temple. This sacred pilgrimage includes darshan at the main temple, visits to nearby shrines, and exploration of the spiritual heritage of the Seven Hills. Witness ancient architecture, participate in traditional rituals, and immerse yourself in centuries-old devotional practices.",
+    highlights: [
+      "VIP darshan arrangements available",
+      "Visit to Padmavathi Temple",
+      "Guided tour of temple architecture",
+      "Traditional prasadam included"
+    ]
   },
   {
     name: "Sri Kalahasti",
-    description: "Rahu-Ketu temple tours",
+    description: "Rahu–Ketu pooja temple tours",
     icon: "🕉️",
     image: "/srikalahasti.jpg",
     duration: "Half Day",
     rating: 4.8,
     visitors: "8k+ visitors",
+    detailedDescription: "Discover the mystical Sri Kalahasteeswara Temple, renowned for Rahu–Ketu pooja and its unique Vayu Linga. This ancient Shiva temple showcases Dravidian architecture and is one of the Pancha Bhoota Sthalams representing air. Experience the eternal flame that burns without oil and witness the divine presence in this sacred abode.",
+    highlights: [
+      "Rahu–Ketu pooja arrangements",
+      "Ancient Vayu Linga darshan",
+      "Temple history guided tour",
+      "Nearby Bharadwaja Tirtham visit"
+    ]
   },
   {
     name: "Kanipakam",
@@ -40,6 +54,13 @@ const categories = [
     duration: "Half Day",
     rating: 4.7,
     visitors: "6k+ visitors",
+    detailedDescription: "Visit the miraculous Kanipakam Vinayaka Temple, home to the self-manifested and ever-growing idol of Lord Ganesha. Legend says the idol continues to grow in size, submerged in water. This powerful temple is known for fulfilling devotees’ wishes and removing obstacles from their lives.",
+    highlights: [
+      "Darshan of the growing Vinayaka idol",
+      "Sacred temple tank visit",
+      "Special abhishekam arrangements",
+      "Temple legend storytelling"
+    ]
   },
   {
     name: "Talakona Falls",
@@ -49,15 +70,29 @@ const categories = [
     duration: "Full Day",
     rating: 4.8,
     visitors: "7k+ visitors",
+    detailedDescription: "Explore Andhra Pradesh’s highest waterfall, cascading from 270 feet amidst the lush Sri Venkateswara National Park. Trek through dense forests, enjoy natural pools, visit the ancient Siddheswara Swamy Temple, and experience the therapeutic properties of the medicinal herbs surrounding the falls.",
+    highlights: [
+      "Guided nature trek to the waterfall",
+      "Natural pool swimming opportunity",
+      "Siddheswara Temple visit",
+      "Wildlife spotting in the national park"
+    ]
   },
   {
     name: "Chandragiri Fort",
     description: "Historical heritage site",
     icon: "🏰",
     image: "/chandragiri_fort.jpg",
-    duration: "3-4 Hours",
+    duration: "3–4 Hours",
     rating: 4.6,
     visitors: "5k+ visitors",
+    detailedDescription: "Step back in time at the magnificent Chandragiri Fort, an 11th-century architectural marvel that served as a stronghold of the Vijayanagara Empire. Explore the Raja Mahal and Rani Mahal palaces, admire Indo-Saracenic architecture, and learn about the region’s rich history through the on-site museum and light & sound show.",
+    highlights: [
+      "Raja Mahal & Rani Mahal exploration",
+      "Archaeological museum visit",
+      "Panoramic fort views",
+      "Historical light & sound show"
+    ]
   },
   {
     name: "Nagalapuram Falls",
@@ -67,15 +102,29 @@ const categories = [
     duration: "Full Day",
     rating: 4.7,
     visitors: "4k+ visitors",
+    detailedDescription: "Embark on an adventurous trek through the Eastern Ghats to reach the pristine Nagalapuram waterfalls. This challenging yet rewarding journey takes you through rocky terrain, dense forests, and natural streams, culminating in a refreshing dip in crystal-clear pools surrounded by untouched natural beauty.",
+    highlights: [
+      "Guided trekking expedition",
+      "Multiple waterfall points",
+      "Natural rock pools for swimming",
+      "Packed lunch in nature"
+    ]
   },
   {
     name: "Sri Venkateswara Zoo",
     description: "Wildlife & nature park",
     icon: "🦁",
     image: "/zoo.jpg",
-    duration: "3-4 Hours",
+    duration: "3–4 Hours",
     rating: 4.5,
     visitors: "9k+ visitors",
+    detailedDescription: "Discover diverse wildlife at the Sri Venkateswara Zoological Park, spread across 5,532 acres of natural habitat. Home to tigers, lions, elephants, and numerous exotic species, this conservation center offers safari rides, nature trails, and educational programs about wildlife preservation in the Eastern Ghats ecosystem.",
+    highlights: [
+      "Safari ride through animal enclosures",
+      "Exotic animal viewing",
+      "Nature interpretation center",
+      "Children’s play area & cafeteria"
+    ]
   },
   {
     name: "Papavinasanam",
@@ -85,17 +134,32 @@ const categories = [
     duration: "Half Day",
     rating: 4.8,
     visitors: "6k+ visitors",
+    detailedDescription: "Experience spiritual cleansing at Papavinasanam, the sacred waterfall believed to wash away sins. Located in the Tirumala Hills, this holy site features a natural waterfall, an ancient temple, and serene surroundings. The water from here is used for abhishekam at the main Tirumala Temple, making it highly auspicious.",
+    highlights: [
+      "Holy waterfall darshan",
+      "Participation in temple rituals",
+      "Scenic hill views",
+      "Spiritual purification experience"
+    ]
   },
   {
     name: "Akasa Ganga",
     description: "Mountain spring trek",
     icon: "⛲",
     image: "/akasaganga.jpg",
-    duration: "2-3 Hours",
+    duration: "2–3 Hours",
     rating: 4.6,
     visitors: "5k+ visitors",
-  },
+    detailedDescription: "Trek to the celestial Akasa Ganga waterfall, a natural spring emerging from rocks on the Tirumala Hills. According to legend, this is where Lord Rama caused water to gush forth to quench Sita’s thirst. The pristine water is considered sacred, and the trek offers breathtaking views of the surrounding valleys and forests.",
+    highlights: [
+      "Sacred mountain spring visit",
+      "Mythological site exploration",
+      "Panoramic valley views",
+      "Photography opportunities"
+    ]
+  }
 ];
+
 
 // Enhanced Card Component
 function EnhancedDestinationCard({
@@ -377,10 +441,7 @@ function DestinationModal({
                       About This Destination
                     </h3>
                     <p className="text-gray-700 font-['Lato'] leading-relaxed text-base">
-                      Experience the divine beauty and spiritual essence of {category.name}.
-                      This sacred destination offers a perfect blend of devotion, natural beauty,
-                      and cultural heritage. Whether you're seeking spiritual enlightenment or
-                      exploring the rich history of the region, this journey promises unforgettable moments.
+                      {category.detailedDescription}
                     </p>
                   </motion.div>
 
@@ -395,7 +456,7 @@ function DestinationModal({
                       Tour Highlights
                     </h3>
                     <div className="space-y-3">
-                      {['Sacred temple darshan', 'Expert guided tour', 'Comfortable AC transportation', 'Complimentary refreshments'].map((item, idx) => (
+                      {category.highlights.map((item, idx) => (
                         <motion.div
                           key={idx}
                           className="flex items-center gap-4 p-3 rounded-xl bg-white border border-emerald-100 hover:border-emerald-300 transition-colors"

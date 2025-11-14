@@ -23,7 +23,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "destinations", "packages","testimonials", "fleet", "contact"];
+      const sections = ["home", "about", "destinations","testimonials", "fleet", "contact"];
       const scrollPosition = window.scrollY + 150;
 
       for (const sectionId of sections) {
@@ -92,7 +92,6 @@ export default function Header() {
             { id: 'fleet', label: 'Our Fleet' },
             { id: 'about', label: 'About Us' },
             { id: 'destinations', label: 'Destinations' },
-            { id: 'packages', label: 'Packages' },
             { id: 'testimonials', label: 'Testimonials' },
           ].map((item) => (
             <button

@@ -34,9 +34,9 @@ export default function Index() {
         </section>
         
         {/* Darshanam Packages Section */}
-        <section id="packages">
+        {/* <section id="packages">
           <PopularDestinations />
-        </section>
+        </section> */}
         
         {/* Testimonials Section */}
         <section id="testimonials">
