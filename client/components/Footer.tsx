@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
               <img
-                src="/gupta_logo.png"
+                src="/Logo.png"
                 alt="guptha TRAVELS"
                 className="w-full h-full object-contain"
               />
