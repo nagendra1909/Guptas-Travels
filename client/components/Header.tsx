@@ -140,7 +140,8 @@ export default function Header() {
               { id: 'fleet', label: 'Car Fleet' },
               { id: 'about', label: 'About Us' },
               { id: 'destinations', label: 'Destinations' },
-              { id: 'packages', label: 'Packages' },
+              // { id: 'packages', label: 'Packages' },
+              { id: 'testimonials', label: 'Testimonials' }
             ].map((item) => (
               <button
                 key={item.id}

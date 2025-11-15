@@ -151,7 +151,7 @@ export default function Features() {
               {/* Corner accent */}
               <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[hsl(var(--temple-gold))]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="text-[hsl(var(--temple-gold))] font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-4xl font-bold mb-0.5 sm:mb-1 group-hover:scale-110 transition-transform duration-300">
-                50K+
+                5K+
               </div>
               <div className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-[10px] sm:text-xs font-semibold line-clamp-2">
                 Journeys

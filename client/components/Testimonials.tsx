@@ -377,9 +377,9 @@ export default function Testimonials() {
             ))}
           </CarouselContent>
 
-          {/* Enhanced Custom Navigation Buttons */}
-          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
-          <CarouselNext className="right-0 sm:-right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+          {/* Enhanced Custom Navigation Buttons - Hidden on mobile */}
+          <CarouselPrevious className="hidden md:flex -left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+          <CarouselNext className="hidden md:flex -right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
         </Carousel>
 
         {/* Auto-play Indicator */}
@@ -425,7 +425,7 @@ export default function Testimonials() {
         {[
           { number: "10,000+", label: "Happy Customers" },
           { number: "4.9/5", label: "Average Rating" },
-          { number: "98%", label: "Satisfaction Rate" },
+          { number: "100%", label: "Satisfaction Rate" },
           { number: "15+", label: "Years Experience" },
         ].map((stat, index) => (
           <motion.div

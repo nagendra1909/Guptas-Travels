@@ -165,7 +165,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">
                 <MapPin className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
-                <a href="https://www.google.com/maps/search/bus+stand+tirupati+andhra+pradesh/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <a href="https://maps.app.goo.gl/sEgPj8a31e4AhNZq6" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   Tirupati, Andhra Pradesh
                 </a>
               </li>
@@ -179,7 +179,7 @@ export default function Footer() {
 
       <div className="border-t-2 border-[#34a870]/20 pt-6 sm:pt-8 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6">
         <p className="text-[#666666] font-['Lato'] text-xs sm:text-sm text-center lg:text-left">
-          © 2025 guptha AGENCY. All rights reserved.
+          © 2025 GUPTHA AGENCY. All rights reserved.
         </p>
         <div className="flex items-center gap-3 sm:gap-4">
           <a
@@ -239,7 +239,7 @@ export default function Footer() {
       </div>
 
       {/* Watermark */}
-      <div className="mt-4 text-center">
+      {/* <div className="mt-4 text-center">
         <p className="text-[#999999] font-['Lato'] text-xs">
           Designed and Developed by
           <a href="https://srnritsolutions.com/" target="_blank" rel="noopener noreferrer" className="text-[#34a870] hover:underline ml-1">
@@ -247,7 +247,7 @@ export default function Footer() {
           </a>
           .
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 }
