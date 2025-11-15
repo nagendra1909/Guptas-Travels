@@ -51,49 +51,33 @@ const vehicles = [
     name: "Tempo Traveller",
     subtitle: "12 Seater - Executive Group Travel",
     tier: "Enterprise Grade",
-    capacity: "12 Executive Seats",
+    capacity: "12 Seats",
     localRent: "₹3,500",
-    localDiesel: "100/- per 8kms",
+    localDiesel: "₹100/8km",
     outstationRate: "₹25/km",
-    minKms: "300 kms",
+    minKms: "300 kms/day",
     features: ["Individual Pushback Seats", "Built-in Entertainment System", "Wide Aisles for Movement", "Multiple USB Charging Ports", "Premium Washroom Facility", "Dedicated Group Coordinator"],
-    specs: ["Avg Mileage: 8-10 km/l", "Luggage: 1200L", "Safety: Anti-Skid Braking"],
+    specs: ["Avg Mileage: 8 km/l", "Luggage: 1200L", "Safety: Anti-Skid Braking"],
     image: "/image1.png",
     badge: "Corporate Grade",
     icon: "🏢",
     accentColor: "from-orange-500 to-orange-600",
   },
   {
-    name: "Urbania Executive",
+    name: "Tempo Traveller",
     subtitle: "17 Seater - Premium Corporate Transport",
     tier: "Enterprise Grade",
-    capacity: "17 Executive Seats",
+    capacity: "17 Seats",
     localRent: "₹4,500",
-    localDiesel: "100/- per 7kms",
+    localDiesel: "₹100/7km",
     outstationRate: "₹35/km",
-    minKms: "300 kms",
+    minKms: "300 kms/day",
     features: ["Reclining Pushback Seats", "Full HD Entertainment Display", "Premium Cabin Lighting", "Advanced Safety Features", "Real-time GPS Tracking", "Executive Travel Protocol"],
-    specs: ["Avg Mileage: 8-9 km/l", "Luggage: 1500L", "Safety: Stability Control"],
+    specs: ["Avg Mileage: 7 km/l", "Luggage: 1500L", "Safety: Stability Control"],
     image: "/van1.png",
     badge: "Enterprise Premium",
     icon: "🌟",
     accentColor: "from-red-500 to-red-600",
-  },
-  {
-    name: "Urbania Grande",
-    subtitle: "21 Seater - Ultimate Group Experience",
-    tier: "Enterprise Grade",
-    capacity: "21 Premium Seats",
-    localRent: "₹5,000",
-    localDiesel: "100/- per 6kms",
-    outstationRate: "₹30/km",
-    minKms: "300 kms",
-    features: ["Luxury Reclining Seats", "Dual Entertainment Systems", "Individual Reading Lights", "Advanced Climate Control", "Professional Attendant", "VIP Travel Coordination"],
-    specs: ["Avg Mileage: 7-8 km/l", "Luggage: 1800L", "Safety: ESC + ABS"],
-    image: "/van3.png",
-    badge: "Ultimate Premium",
-    icon: "�",
-    accentColor: "from-amber-500 to-amber-600",
   },
 ];
 
@@ -304,20 +288,20 @@ export default function VehicleFleet() {
             </div>
             <ul className="space-y-3">
               {[
-                { icon: "👨‍💼", title: "Elite Driver", desc: "5+ years experience" },
+                { icon: "👨‍💼", title: "Driver Batta", desc: "Included in price" },
                 {
-                  icon: "🔧",
-                  title: "Premium Maintenance",
+                  icon: "�",
+                  title: "Garage to Garage",
+                  desc: "Kms & days calculated",
+                },
+                {
+                  icon: "�",
+                  title: "Well-Maintained Vehicle",
                   desc: "Regular servicing",
                 },
                 {
-                  icon: "🗺️",
-                  title: "GPS Navigation",
-                  desc: "Real-time tracking",
-                },
-                {
                   icon: "📞",
-                  title: "24/7 Concierge",
+                  title: "24/7 Support",
                   desc: "Always available",
                 },
               ].map((item, idx) => (
@@ -370,26 +354,25 @@ export default function VehicleFleet() {
             </ul>
           </div>
 
-          {/* Additional Services */}
-          <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-purple-100/50 shadow-md hover:shadow-lg transition-shadow">
+          {/* Additional Charges */}
+          <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-orange-100/50 shadow-md hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-md">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md">
                 <span className="text-white text-2xl">💳</span>
               </div>
               <h4 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-lg font-bold">
-                Additional Charges
+                Exclusions
               </h4>
             </div>
             <div className="space-y-3">
               {[
-                { icon: "🍽️", title: "Driver Meal", cost: "₹300" },
-                { icon: "🛣️", title: "Toll & Parking", cost: "Actual" },
-                { icon: "🏛️", title: "State Taxes", cost: "Actual" },
-                { icon: "🎯", title: "Custom Tours", cost: "Quote" },
+                { icon: "🛣️", title: "Tolls & Parking", cost: "Extra" },
+                { icon: "🏛️", title: "State Taxes", cost: "Extra" },
+                { icon: "�️", title: "Driver Food", cost: "₹300/day" },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex justify-between items-start p-2 rounded-lg bg-purple-50/50 border border-purple-100/30"
+                  className="flex justify-between items-start p-2 rounded-lg bg-orange-50/50 border border-orange-100/30"
                 >
                   <div className="flex items-center gap-2">
                     <div className="min-w-0">
@@ -398,7 +381,7 @@ export default function VehicleFleet() {
                       </p>
                     </div>
                   </div>
-                  <span className="text-purple-700 font-['Lato'] font-bold text-xs flex-shrink-0 ml-2">
+                  <span className="text-orange-700 font-['Lato'] font-bold text-xs flex-shrink-0 ml-2">
                     {item.cost}
                   </span>
                 </div>

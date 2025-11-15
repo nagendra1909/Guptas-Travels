@@ -986,9 +986,9 @@ export default function Categories() {
             ))}
           </CarouselContent>
 
-          {/* Enhanced Custom Navigation Buttons with emerald theme */}
-          <CarouselPrevious className="left-0 sm:-left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
-          <CarouselNext className="right-0 sm:-right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+          {/* Enhanced Custom Navigation Buttons with emerald theme - Hidden on mobile */}
+          <CarouselPrevious className="hidden md:flex -left-6 lg:-left-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
+          <CarouselNext className="hidden md:flex -right-6 lg:-right-12 w-12 h-12 sm:w-14 sm:h-14 border-2 border-emerald-500 bg-white/95 backdrop-blur-sm text-emerald-600 hover:bg-gradient-to-br hover:from-emerald-500 hover:to-emerald-600 hover:text-white transition-all duration-500 shadow-xl hover:shadow-emerald-500/50 hover:shadow-2xl hover:scale-110 active:scale-95" />
         </Carousel>
 
         {/* Enhanced Mobile Swipe Indicator with auto-play status */}
@@ -1012,7 +1012,7 @@ export default function Categories() {
                 ease: "easeInOut"
               }}
             />
-            <div className="relative text-emerald-600 text-sm font-['Lato'] flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/95 backdrop-blur-md border-2 border-emerald-300 font-bold shadow-lg">
+            {/* <div className="relative text-emerald-600 text-sm font-['Lato'] flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/95 backdrop-blur-md border-2 border-emerald-300 font-bold shadow-lg">
               <motion.div
                 animate={{ x: [-3, 0, -3] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -1028,7 +1028,7 @@ export default function Categories() {
               >
                 <ArrowRight className="w-5 h-5 text-emerald-500" />
               </motion.div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </motion.div>
